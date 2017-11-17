@@ -24,10 +24,11 @@
   text-align:left;
 }
 .heading_2 {
-  font-family:'Roboto-Medium', 'Roboto Medium', 'Roboto';
+  font-family:'Avenir-Medium', 'Avenir Medium', 'Avenir Book', 'Avenir';
   font-weight:500;
   font-style:normal;
   font-size:32px;
+  color:#0E0E0E;
   text-align:left;
 }
 .heading_3 {
@@ -58,10 +59,11 @@
   text-align:left;
 }
 .paragraph {
-  font-family:'Roboto-Regular', 'Roboto';
+  font-family:'Avenir-Book', 'Avenir Book', 'Avenir';
   font-weight:400;
   font-style:normal;
   font-size:24px;
+  color:#0E0E0E;
   text-align:left;
   line-height:30px;
 }
@@ -75,4 +77,46 @@
   font-style:normal;
   font-size:48px;
   color:#000000;
+}
+.heading2_white {
+  font-family:'Avenir-Medium', 'Avenir Medium', 'Avenir Book', 'Avenir';
+  font-weight:500;
+  font-style:normal;
+  font-size:32px;
+  color:#FFFFFF;
+  text-align:left;
+}
+.header_link {
+  font-family:'Avenir-Book', 'Avenir Book', 'Avenir';
+  font-weight:400;
+  font-style:normal;
+  font-size:32px;
+  color:#0F7B7B;
+  text-align:center;
+}
+.comingup {
+  font-family:'Avenir-Book', 'Avenir Book', 'Avenir';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  color:#999999;
+  text-align:center;
+  line-height:30px;
+}
+.subtitle {
+  font-family:'Avenir-Book', 'Avenir Book', 'Avenir';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  color:#999999;
+  text-align:left;
+  line-height:30px;
+}
+.title {
+  font-family:'Avenir-Book', 'Avenir Book', 'Avenir';
+  font-weight:400;
+  font-style:normal;
+  font-size:48px;
+  color:#0E0E0E;
+  text-align:left;
 }
