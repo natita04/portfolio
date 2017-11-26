@@ -15,8 +15,13 @@
 }
 .image {
 }
+.placeholder {
+}
 .primary_button {
   color:#FFFFFF;
+}
+.link_button {
+  color:#169BD5;
 }
 .heading_1 {
   font-family:'Roboto-Medium', 'Roboto Medium', 'Roboto';
@@ -86,7 +91,7 @@
   color:#000000;
 }
 .heading2_white {
-  font-family:'Avenir-Medium', 'Avenir Medium', 'Avenir Book', 'Avenir';
+  font-family:'Lato-Medium', 'Lato Medium', 'Lato';
   font-weight:500;
   font-style:normal;
   font-size:32px;
@@ -143,4 +148,13 @@
   color:#333333;
   text-align:left;
   line-height:24px;
+}
+.paragraph_white {
+  font-family:'Lato-Regular', 'Lato';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  color:#FFFFFF;
+  text-align:left;
+  line-height:30px;
 }
