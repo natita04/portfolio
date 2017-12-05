@@ -519,7 +519,7 @@
   border-width:0px;
   position:absolute;
   left:30px;
-  top:687px;
+  top:594px;
   width:462px;
   height:57px;
   font-family:'Lato-Regular', 'Lato';
@@ -577,7 +577,7 @@
   border-width:0px;
   position:absolute;
   left:443px;
-  top:713px;
+  top:620px;
   width:248px;
   height:30px;
   font-size:16px;
@@ -631,7 +631,7 @@
   border-width:0px;
   position:absolute;
   left:30px;
-  top:778px;
+  top:685px;
   width:374px;
   height:57px;
   font-family:'Lato-Regular', 'Lato';
@@ -691,7 +691,7 @@
   border-width:0px;
   position:absolute;
   left:427px;
-  top:804px;
+  top:711px;
   width:248px;
   height:30px;
   font-size:16px;
@@ -745,7 +745,7 @@
   border-width:0px;
   position:absolute;
   left:30px;
-  top:869px;
+  top:776px;
   width:269px;
   height:57px;
   font-family:'Lato-Regular', 'Lato';
@@ -805,7 +805,7 @@
   border-width:0px;
   position:absolute;
   left:324px;
-  top:895px;
+  top:802px;
   width:248px;
   height:30px;
   font-size:16px;
@@ -859,7 +859,7 @@
   border-width:0px;
   position:absolute;
   left:30px;
-  top:961px;
+  top:868px;
   width:222px;
   height:57px;
   font-family:'Lato-Regular', 'Lato';
@@ -919,7 +919,7 @@
   border-width:0px;
   position:absolute;
   left:273px;
-  top:987px;
+  top:894px;
   width:362px;
   height:30px;
   font-size:16px;
@@ -973,7 +973,7 @@
   border-width:0px;
   position:absolute;
   left:30px;
-  top:1052px;
+  top:959px;
   width:314px;
   height:57px;
   font-family:'Lato-Regular', 'Lato';
@@ -1033,7 +1033,7 @@
   border-width:0px;
   position:absolute;
   left:363px;
-  top:1078px;
+  top:985px;
   width:248px;
   height:30px;
   font-size:16px;
@@ -1413,7 +1413,7 @@
   border-width:0px;
   position:absolute;
   left:30px;
-  top:594px;
+  top:1050px;
   width:462px;
   height:57px;
   font-family:'Lato-Regular', 'Lato';
@@ -1444,15 +1444,17 @@
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:16px;
+  color:#999999;
 }
 #u62 {
   border-width:0px;
   position:absolute;
   left:328px;
-  top:620px;
+  top:1076px;
   width:248px;
   height:30px;
   font-size:16px;
+  color:#999999;
 }
 #u62_text {
   border-width:0px;
