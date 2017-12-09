@@ -1233,6 +1233,27 @@
   font-style:normal;
   color:#0F7B7B;
 }
+#u55_div.mouseOver {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:462px;
+  height:57px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:'Lato-Regular', 'Lato';
+  font-weight:400;
+  font-style:normal;
+  color:#0F7B7B;
+}
+#u55.mouseOver {
+}
 #u55_text {
   border-width:0px;
   position:absolute;
