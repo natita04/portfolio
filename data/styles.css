@@ -13,6 +13,8 @@
 }
 .box_3 {
 }
+.ellipse {
+}
 .image {
 }
 .placeholder {
@@ -28,11 +30,11 @@
   font-weight:500;
   font-style:normal;
   font-size:48px;
-  color:#666666;
+  color:#333333;
   text-align:left;
 }
 .heading_2 {
-  font-family:'Lato-Medium', 'Lato Medium', 'Lato';
+  font-family:'Roboto-Medium', 'Roboto Medium', 'Roboto';
   font-weight:500;
   font-style:normal;
   font-size:32px;
@@ -67,7 +69,7 @@
   text-align:left;
 }
 .paragraph {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:24px;
@@ -87,11 +89,12 @@
   font-family:'MaterialIcons-Regular', 'Material Icons';
   font-weight:400;
   font-style:normal;
-  font-size:48px;
-  color:#000000;
+  font-size:16px;
+  color:#DE3C4B;
+  text-align:left;
 }
 .heading2_white {
-  font-family:'Lato-Medium', 'Lato Medium', 'Lato';
+  font-family:'Roboto-Medium', 'Roboto Medium', 'Roboto';
   font-weight:500;
   font-style:normal;
   font-size:32px;
@@ -99,15 +102,15 @@
   text-align:left;
 }
 .header_link {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:32px;
-  color:#0F7B7B;
+  color:#46B1C9;
   text-align:center;
 }
 .comingup {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:24px;
@@ -116,7 +119,7 @@
   line-height:30px;
 }
 .subtitle {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:16px;
@@ -125,7 +128,7 @@
   line-height:30px;
 }
 .title {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:48px;
@@ -141,7 +144,7 @@
   text-align:center;
 }
 .spec_text {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -150,11 +153,20 @@
   line-height:24px;
 }
 .paragraph_white {
-  font-family:'Lato-Regular', 'Lato';
+  font-family:'Roboto-Regular', 'Roboto';
   font-weight:400;
   font-style:normal;
   font-size:24px;
   color:#FFFFFF;
   text-align:left;
   line-height:30px;
+}
+.spec_text_white {
+  font-family:'Roboto-Regular', 'Roboto';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  color:#FFFFFF;
+  text-align:left;
+  line-height:24px;
 }
