@@ -57,7 +57,7 @@
   overflow-x:hidden;
   -ms-overflow-y:hidden;
   overflow-y:hidden;
-  background-color:rgba(242, 242, 242, 1);
+  background-color:rgba(212, 215, 220, 1);
   background-image:none;
 }
 #u9_state0_content {
@@ -269,7 +269,7 @@
   -webkit-box-shadow:none;
   box-shadow:none;
   font-size:80px;
-  color:#0FC1F2;
+  color:#34BFFF;
   text-align:center;
 }
 #u15 {
@@ -280,7 +280,7 @@
   width:310px;
   height:89px;
   font-size:80px;
-  color:#0FC1F2;
+  color:#34BFFF;
   text-align:center;
 }
 #u15_text {
@@ -667,6 +667,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  color:#D4D7DC;
   text-align:center;
 }
 #u32 {
@@ -676,6 +677,7 @@
   top:433px;
   width:836px;
   height:30px;
+  color:#D4D7DC;
   text-align:center;
 }
 #u32_text {
@@ -700,6 +702,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  color:#393A3D;
   text-align:center;
 }
 #u33 {
@@ -709,6 +712,7 @@
   top:1339px;
   width:800px;
   height:339px;
+  color:#393A3D;
   text-align:center;
 }
 #u33_text {
@@ -758,6 +762,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  color:#393A3D;
   text-align:center;
 }
 #u35 {
@@ -767,6 +772,7 @@
   top:1188px;
   width:903px;
   height:112px;
+  color:#393A3D;
   text-align:center;
 }
 #u35_text {
@@ -791,6 +797,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  color:#393A3D;
   text-align:center;
 }
 #u36 {
@@ -800,6 +807,7 @@
   top:1858px;
   width:800px;
   height:60px;
+  color:#393A3D;
   text-align:center;
 }
 #u36_text {
