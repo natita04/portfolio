@@ -1,0 +1,329 @@
+/* Custom CSS for Nati Asher Portfolio */
+
+/* Typography */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #000;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #F7FDFE;
+}
+
+/* Make ALL links black */
+a {
+    color: #000 !important;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #000 !important;
+    text-decoration: underline;
+}
+
+/* Override for specific link types to remove underline on hover */
+a.cv-link:hover,
+a.story-link:hover {
+    text-decoration: none !important;
+}
+
+/* Container adjustments */
+.container {
+    max-width: 700px;
+    padding: 80px 20px 200px 20px;
+}
+
+/* Increased spacing between sections */
+section {
+    margin-bottom: 4rem;
+}
+
+/* First section - remove default margin to allow precise h1 spacing */
+.first-section {
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+
+header {
+    /*margin-bottom: 4rem;
+}
+
+/* Header styling */
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px !important;
+}
+
+.profile-picture {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f8f9fa;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 48px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 40px !important;
+    text-align: left;
+}
+
+/* Ensure no extra margin on first section */
+header + main section:first-child {
+    margin-top: 0 !important;
+}
+
+/* First paragraph styling with precise spacing */
+.first-paragraph {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 54px;
+    color: #000;
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem;
+}
+
+header .lead {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Main content styling */
+main p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 54px;
+    color: #000;
+    margin-bottom: 1.5rem;
+}
+
+/* Strong text styling */
+strong {
+    font-weight: 600;
+}
+
+/* CV Link */
+.cv-link {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+
+
+/* Social Links */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    color: #000;
+    font-weight: 400;
+    font-size: 32px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid #000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 15px;
+}
+
+/* Social media brand color hover effects */
+.social-link:hover {
+    transform: scale(1.15) !important;
+    text-decoration: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    transition: all 0.3s ease !important;
+    color: #fff !important;
+}
+
+/* Facebook - Blue */
+.social-link.facebook:hover {
+    background-color: #1877F2 !important;
+    box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3) !important;
+}
+
+/* Instagram - Pink */
+.social-link.instagram:hover {
+    background-color: #E4405F !important;
+    box-shadow: 0 4px 16px rgba(228, 64, 95, 0.3) !important;
+}
+
+/* LinkedIn - Professional Blue */
+.social-link.linkedin:hover {
+    background-color: #0A66C2 !important;
+    box-shadow: 0 4px 16px rgba(10, 102, 194, 0.3) !important;
+}
+
+/* WhatsApp - Green */
+.social-link.whatsapp:hover {
+    background-color: #25D366 !important;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3) !important;
+}
+
+/* Medium - Black */
+.social-link.medium:hover {
+    background-color: #000 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.social-link i,
+.social-link .fab,
+.social-link i.fab,
+a.social-link i,
+.social-link i.fab.fa-facebook-f,
+.social-link i.fab.fa-instagram,
+.social-link i.fab.fa-medium,
+.social-link i.fab.fa-linkedin-in,
+.social-link i.fab.fa-whatsapp {
+    font-size: 28px !important;
+    line-height: 1 !important;
+    transform: scale(1.2) !important;
+    display: inline-block !important;
+}
+
+/* Stories Section */
+.stories-list {
+    margin-top: 2rem;
+}
+
+.story-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.story-link {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+
+
+/* Story emojis - clean styling without backgrounds */
+.story-emoji {
+    font-size: 1rem;
+    margin-right: 8px;
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Section headings */
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .profile-picture-container {
+        margin-bottom: 60px !important;
+    }
+    
+    header h1 {
+        font-size: 48px;
+        font-weight: 400;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    
+    .social-link {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+        margin: 0 15px;
+    }
+    
+    .social-link i {
+        font-size: 26px !important;
+        transform: scale(1.1) !important;
+    }
+    
+    .d-flex.gap-3 {
+        gap: 0 !important;
+    }
+    
+    /* Instagram grid mobile responsive */
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Desktop media query to override mobile styles */
+@media (min-width: 769px) {
+    .social-link i,
+    .social-link .fab,
+    .social-link i.fab,
+    a.social-link i,
+    .social-link i.fab.fa-facebook-f,
+    .social-link i.fab.fa-instagram,
+    .social-link i.fab.fa-medium,
+    .social-link i.fab.fa-linkedin-in,
+    .social-link i.fab.fa-whatsapp {
+        font-size: 28px !important;
+        transform: scale(1.2) !important;
+        display: inline-block !important;
+    }
+    
+    .social-link {
+        width: 80px !important;
+        height: 80px !important;
+        font-size: 32px !important;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.cv-link:focus,
+.social-link:focus,
+.story-link:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .social-link {
+        display: none;
+    }
+} }
