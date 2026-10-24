@@ -21,6 +21,8 @@
     --lilac:#EEE8F3;
     --lilac-deep:#7E5C9A;
     --orange:#FF7A3D;
+    --orange-deep:#B4470F;
+    --orange-tint:#FFF0E6;
     --radius:10px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -119,7 +121,7 @@
 
   .content-col{ padding-left:56px; }
   .head-row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px 24px; flex-wrap:wrap; }
-  .head-link{ font-size:14px; font-weight:600; color:var(--pink-deep); text-decoration:none; white-space:nowrap; border-bottom:1.5px solid currentColor; padding-bottom:1px; transition:color .15s; }
+  .head-link{ font-size:14px; font-weight:600; color:var(--pink-deep); text-decoration:none; white-space:nowrap; transition:color .15s; }
   .head-link:hover{ color:var(--pink); }
 
   /* BACKGROUND BAND */
@@ -242,6 +244,27 @@
   .podcast h3 [lang="he"]{ font-family:'Rubik', sans-serif; font-weight:700; font-size:26px; }
   .podcast p{ font-size:14px; color:#B9AFBD; max-width:560px; }
   .podcast .go{ font-size:13px; font-weight:600; color:#fff; white-space:nowrap; }
+
+  /* BENCH BAND */
+  #bench{
+    position:relative; overflow:hidden; background-color:var(--orange-tint);
+    background-image:repeating-linear-gradient(135deg, rgba(255,122,61,0.14) 0 1px, transparent 1px 18px);
+  }
+  #bench::before{
+    content:""; position:absolute; left:-120px; bottom:-140px; width:360px; height:360px; pointer-events:none;
+    border:2px solid rgba(255,122,61,0.55); border-radius:40% 60% 55% 45% / 50% 40% 60% 50%; transform:rotate(-12deg);
+  }
+  #bench::after{
+    content:""; position:absolute; right:8%; top:48px; width:120px; height:120px; pointer-events:none;
+    background-image:radial-gradient(rgba(255,122,61,0.6) 2px, transparent 2.5px); background-size:16px 16px;
+  }
+  #bench .wrap{ z-index:1; }
+  #bench .kicker{ color:var(--orange-deep); }
+  #bench .milestone::before{ background:var(--orange-tint); border-color:var(--orange-deep); }
+  #bench .bench-card{ border-color:rgba(255,122,61,0.3); }
+  #bench .bench-card:hover{ border-color:var(--ink); box-shadow:6px 6px 0 var(--orange); }
+  #bench .bench-card .go{ color:var(--orange-deep); }
+  #bench .case-tag{ color:var(--orange-deep); background:var(--orange-tint); }
 
   /* BENCH */
   .bench{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -428,7 +451,7 @@
   <div class="wrap">
     <div class="thread"></div>
     <div class="section-head milestone">
-      <span class="kicker">Writing</span>
+      <span class="kicker">Thoughts</span>
       <div class="head-row">
         <h2>Notes on design and leadership</h2>
         <a class="head-link" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
@@ -476,7 +499,7 @@
   </div>
 </section>
 
-<section class="bordered" id="bench">
+<section id="bench">
   <div class="wrap">
     <div class="thread"></div>
     <div class="section-head milestone">
