@@ -280,10 +280,18 @@
   .bench-tag{ margin-left:6px; padding:2px 7px; font-size:10px; font-weight:500; vertical-align:3px; }
 
   /* PERSONAL */
-  .personal{ background:var(--plum); color:#F3EEF1; }
+  .personal{
+    background-color:var(--lilac-deep); color:#fff; position:relative; overflow:hidden;
+    background-image:radial-gradient(rgba(255,255,255,0.14) 1.2px, transparent 1.4px); background-size:22px 22px;
+  }
+  .personal::after{
+    content:""; position:absolute; right:-80px; top:50%; width:300px; height:300px; transform:translateY(-50%);
+    border-radius:50%; border:2px solid rgba(238,232,243,0.45); box-shadow:0 0 0 40px rgba(238,232,243,0.06); pointer-events:none;
+  }
+  .personal .wrap{ z-index:1; }
   .personal .wrap{ padding-left:32px; }
   .personal h2{ font-family:'Sora', sans-serif; font-size:26px; line-height:1.4; max-width:760px; }
-  .personal .kicker{ color:var(--pink); font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; display:block; }
+  .personal .kicker{ color:var(--lilac); font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; display:block; }
 
   /* CONTACT */
   .contact-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:56px; padding-left:56px; }
@@ -505,6 +513,7 @@
     <div class="section-head milestone">
       <span class="kicker">Just for fun</span>
       <h2>Side projects</h2>
+      <p>Building things on my own time keeps my design skills sharp beyond my day-to-day work, from idea to shipped product.</p>
     </div>
     <div class="content-col">
       <div class="bench">
