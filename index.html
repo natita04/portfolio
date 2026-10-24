@@ -109,13 +109,6 @@
   .id-row:first-of-type{ border-top:none; }
   .id-row b{ color:var(--ink); font-weight:600; }
 
-  /* STATS */
-  .stats{ display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--line); }
-  .stat{ padding:30px 32px; border-left:1px solid var(--line); }
-  .stat:first-child{ border-left:none; }
-  .stat .num{ font-family:'Sora', sans-serif; font-weight:700; font-size:28px; color:var(--pink-deep); }
-  .stat .lbl{ font-size:13px; color:var(--ink-soft); margin-top:4px; }
-
   section{ padding:84px 0; }
   section.bordered{ border-bottom:1px solid var(--line); }
   .section-head{ margin-bottom:44px; padding-left:56px; }
@@ -127,6 +120,14 @@
   .section-head p{ color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:560px; }
 
   .content-col{ padding-left:56px; }
+
+  /* BACKGROUND LOGOS */
+  .logos{ display:flex; flex-wrap:wrap; align-items:center; gap:56px; }
+  .logos img{ height:32px; width:auto; filter:grayscale(1); opacity:0.6; transition:opacity .15s; }
+  .logos img:hover{ opacity:0.9; }
+  .logos .logo-avg{ height:52px; }
+  .logos .logo-wework{ height:24px; }
+  .logos .logo-buildots{ height:40px; }
 
   /* PILLARS */
   .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
@@ -209,8 +210,6 @@
   }
   @media (max-width:860px){
     .hero-grid{ grid-template-columns:1fr; }
-    .stats{ grid-template-columns:repeat(2,1fr); }
-    .stat:nth-child(3){ border-left:none; }
     .pillars{ grid-template-columns:1fr; }
     .bench{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
@@ -260,12 +259,24 @@
   </div>
 </section>
 
-<div class="stats">
-  <div class="stat"><div class="num">5+</div><div class="lbl">Years leading design teams</div></div>
-  <div class="stat"><div class="num">6</div><div class="lbl">Companies, from startup to enterprise</div></div>
-  <div class="stat"><div class="num">12+</div><div class="lbl">Articles published on design and management</div></div>
-  <div class="stat"><div class="num">3</div><div class="lbl">Kids raised</div></div>
-</div>
+<section class="bordered" id="background">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="section-head milestone">
+      <span class="kicker">Background</span>
+      <h2>16 years in product design, the last 5 leading design teams.</h2>
+      <p>I spent over a decade as a hands-on product designer, from consumer security to banking, workspaces and construction tech, before moving into design management.</p>
+    </div>
+    <div class="content-col">
+      <div class="logos">
+        <img class="logo-avg" src="images/logos/avg.svg" alt="AVG">
+        <img src="images/logos/citi.svg" alt="Citi">
+        <img class="logo-wework" src="images/logos/wework.png" alt="WeWork">
+        <img class="logo-buildots" src="images/logos/buildots.svg" alt="Buildots">
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="bordered" id="work">
   <div class="wrap">
