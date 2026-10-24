@@ -20,6 +20,7 @@
     --plum:#382A3C;
     --lilac:#EEE8F3;
     --lilac-deep:#7E5C9A;
+    --orange:#FF7A3D;
     --radius:10px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -117,6 +118,9 @@
   .section-head p{ color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:560px; }
 
   .content-col{ padding-left:56px; }
+  .head-row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px 24px; flex-wrap:wrap; }
+  .head-link{ font-size:14px; font-weight:600; color:var(--pink-deep); text-decoration:none; white-space:nowrap; border-bottom:1.5px solid currentColor; padding-bottom:1px; transition:color .15s; }
+  .head-link:hover{ color:var(--pink); }
 
   /* BACKGROUND BAND */
   #background{
@@ -129,13 +133,13 @@
   #background::after{
     content:"16"; position:absolute; right:-20px; bottom:-90px;
     font-family:'Sora', sans-serif; font-weight:800; font-size:380px; line-height:1; letter-spacing:-0.06em;
-    color:transparent; -webkit-text-stroke:2px rgba(194,27,107,0.55); pointer-events:none;
+    color:transparent; -webkit-text-stroke:2px rgba(255,122,61,0.55); pointer-events:none;
   }
   #background .wrap{ z-index:1; }
-  #background .kicker{ color:var(--pink); }
-  #background h2 em{ font-style:normal; color:var(--pink); }
+  #background .kicker{ color:var(--orange); }
+  #background h2 em{ font-style:normal; color:var(--orange); }
   #background .section-head p{ color:#B9AFBD; }
-  #background .milestone::before{ background:var(--ink); }
+  #background .milestone::before{ background:var(--ink); border-color:var(--orange); }
   #background .thread{ background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15) 40px, rgba(255,255,255,0.15) calc(100% - 40px), transparent); }
   #background .logos img{ filter:grayscale(1) brightness(0) invert(1); opacity:0.7; }
   #background .logos img:hover{ opacity:1; }
@@ -213,8 +217,21 @@
   .podcast{
     margin-top:40px; display:grid; grid-template-columns:auto 1fr auto; gap:24px; align-items:center;
     background:var(--ink); color:#F3EEF1; border-radius:14px; padding:26px 28px; text-decoration:none;
-    transition:transform .15s, box-shadow .15s;
+    transition:transform .15s, box-shadow .15s; position:relative; overflow:hidden; isolation:isolate;
+    background-image:
+      radial-gradient(circle at 56px 50%, rgba(194,27,107,0.45), transparent 220px),
+      radial-gradient(circle at 100% 0%, rgba(126,92,154,0.45), transparent 340px);
   }
+  .podcast > *:not(.podcast-wave){ position:relative; z-index:1; }
+  .podcast-wave{
+    position:absolute; right:0; top:50%; transform:translateY(-50%); width:62%; height:80%;
+    fill:var(--pink); opacity:0.22; z-index:0;
+    -webkit-mask-image:linear-gradient(to right, transparent, #000 40%);
+            mask-image:linear-gradient(to right, transparent, #000 40%);
+    transition:opacity .2s;
+  }
+  .podcast:hover .podcast-wave{ opacity:0.38; }
+  .podcast-icon{ box-shadow:0 0 0 8px rgba(194,27,107,0.18), 0 0 0 16px rgba(194,27,107,0.08); }
   .podcast:hover{ transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--pink); }
   .podcast-icon{
     width:56px; height:56px; border-radius:50%; background:var(--pink); color:#fff;
@@ -410,13 +427,13 @@
 <section class="bordered" id="writing">
   <div class="wrap">
     <div class="thread"></div>
-    <div class="section-head milestone" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="kicker">Writing</span>
+    <div class="section-head milestone">
+      <span class="kicker">Writing</span>
+      <div class="head-row">
         <h2>Notes on design and leadership</h2>
-        <p>I&rsquo;ve loved the printed word since I was young, and writing is still where I think most clearly. Most of these pieces started as notes to help a friend or to sort out my own thinking on a topic.</p>
+        <a class="head-link" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
       </div>
-      <a class="btn btn-ghost" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
+      <p>I&rsquo;ve loved the printed word since I was young, and writing is still where I think most clearly. Most of these pieces started as notes to help a friend or to sort out my own thinking on a topic.</p>
     </div>
     <div class="content-col">
       <div class="log">
@@ -446,6 +463,7 @@
         </a>
       </div>
       <a class="podcast" href="https://www.youtube.com/playlist?list=PLcNbLNCXcHXA" target="_blank">
+        <svg class="podcast-wave" viewBox="0 0 640 100" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="45.0" width="4" height="10.0" rx="2"/><rect x="10" y="22.0" width="4" height="56.0" rx="2"/><rect x="20" y="4.0" width="4" height="92.0" rx="2"/><rect x="30" y="11.2" width="4" height="77.6" rx="2"/><rect x="40" y="6.5" width="4" height="87.0" rx="2"/><rect x="50" y="27.0" width="4" height="45.9" rx="2"/><rect x="60" y="29.2" width="4" height="41.7" rx="2"/><rect x="70" y="28.9" width="4" height="42.2" rx="2"/><rect x="80" y="37.8" width="4" height="24.5" rx="2"/><rect x="90" y="31.9" width="4" height="36.3" rx="2"/><rect x="100" y="40.6" width="4" height="18.8" rx="2"/><rect x="110" y="27.0" width="4" height="46.1" rx="2"/><rect x="120" y="16.8" width="4" height="66.5" rx="2"/><rect x="130" y="32.2" width="4" height="35.5" rx="2"/><rect x="140" y="32.6" width="4" height="34.9" rx="2"/><rect x="150" y="31.9" width="4" height="36.1" rx="2"/><rect x="160" y="11.7" width="4" height="76.7" rx="2"/><rect x="170" y="4.0" width="4" height="92.0" rx="2"/><rect x="180" y="7.2" width="4" height="85.7" rx="2"/><rect x="190" y="6.2" width="4" height="87.5" rx="2"/><rect x="200" y="31.1" width="4" height="37.9" rx="2"/><rect x="210" y="36.2" width="4" height="27.6" rx="2"/><rect x="220" y="15.8" width="4" height="68.5" rx="2"/><rect x="230" y="20.9" width="4" height="58.2" rx="2"/><rect x="240" y="12.7" width="4" height="74.6" rx="2"/><rect x="250" y="29.9" width="4" height="40.2" rx="2"/><rect x="260" y="29.3" width="4" height="41.4" rx="2"/><rect x="270" y="27.3" width="4" height="45.5" rx="2"/><rect x="280" y="40.9" width="4" height="18.1" rx="2"/><rect x="290" y="29.5" width="4" height="41.0" rx="2"/><rect x="300" y="34.4" width="4" height="31.3" rx="2"/><rect x="310" y="18.8" width="4" height="62.4" rx="2"/><rect x="320" y="6.5" width="4" height="87.0" rx="2"/><rect x="330" y="20.3" width="4" height="59.4" rx="2"/><rect x="340" y="20.8" width="4" height="58.3" rx="2"/><rect x="350" y="43.6" width="4" height="12.8" rx="2"/><rect x="360" y="20.7" width="4" height="58.6" rx="2"/><rect x="370" y="4.0" width="4" height="92.0" rx="2"/><rect x="380" y="7.1" width="4" height="85.8" rx="2"/><rect x="390" y="4.0" width="4" height="92.0" rx="2"/><rect x="400" y="22.1" width="4" height="55.7" rx="2"/><rect x="410" y="26.5" width="4" height="47.1" rx="2"/><rect x="420" y="27.8" width="4" height="44.3" rx="2"/><rect x="430" y="32.3" width="4" height="35.4" rx="2"/><rect x="440" y="22.6" width="4" height="54.8" rx="2"/><rect x="450" y="38.0" width="4" height="24.0" rx="2"/><rect x="460" y="35.9" width="4" height="28.3" rx="2"/><rect x="470" y="25.5" width="4" height="49.1" rx="2"/><rect x="480" y="37.0" width="4" height="26.0" rx="2"/><rect x="490" y="32.1" width="4" height="35.9" rx="2"/><rect x="500" y="34.7" width="4" height="30.5" rx="2"/><rect x="510" y="16.1" width="4" height="67.7" rx="2"/><rect x="520" y="4.0" width="4" height="92.0" rx="2"/><rect x="530" y="10.3" width="4" height="79.4" rx="2"/><rect x="540" y="7.9" width="4" height="84.2" rx="2"/><rect x="550" y="32.0" width="4" height="36.1" rx="2"/><rect x="560" y="34.7" width="4" height="30.7" rx="2"/><rect x="570" y="12.3" width="4" height="75.4" rx="2"/><rect x="580" y="14.9" width="4" height="70.3" rx="2"/><rect x="590" y="4.6" width="4" height="90.9" rx="2"/><rect x="600" y="21.1" width="4" height="57.8" rx="2"/><rect x="610" y="22.0" width="4" height="56.1" rx="2"/><rect x="620" y="23.4" width="4" height="53.3" rx="2"/><rect x="630" y="40.3" width="4" height="19.5" rx="2"/></svg>
         <span class="podcast-icon" aria-hidden="true">▶</span>
         <div class="podcast-body">
           <span class="podcast-kicker">Podcast</span>
