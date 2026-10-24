@@ -1,203 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nati Asher - Product Design Executive</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nati Asher — Senior Director of Product Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F3F2;
+    --surface:#FFFFFF;
+    --ink:#1B1620;
+    --ink-soft:#665F6C;
+    --line:#E6DCDF;
+    --pink:#C21B6B;
+    --pink-deep:#8F1350;
+    --pink-tint:#FBE7F0;
+    --plum:#382A3C;
+    --radius:10px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--pink); color:#fff;}
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px; position:relative;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,243,242,0.92); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px; max-width:1080px; margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:8px;
+    font-family:'Sora', sans-serif; font-weight:700; font-size:18px;
+  }
+  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--pink);}
+  nav ul{list-style:none; display:flex; gap:30px;}
+  nav a{
+    font-size:13px; text-decoration:none; color:var(--ink-soft);
+    font-weight:500; letter-spacing:0.01em; transition:color .15s;
+  }
+  nav a:hover{color:var(--pink-deep);}
+
+  /* ROADMAP THREAD — the throughline device */
+  .thread{
+    position:absolute; left:0; top:0; bottom:0; width:1px;
+    background:linear-gradient(to bottom, transparent, var(--line) 40px, var(--line) calc(100% - 40px), transparent);
+    display:none;
+  }
+  @media(min-width:960px){ .thread{display:block;} }
+  .milestone{
+    position:relative; padding-left:0;
+  }
+  .milestone::before{
+    content:""; position:absolute; left:-38px; top:6px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--pink);
+  }
+
+  /* HERO */
+  .hero{ padding:100px 0 70px; border-bottom:1px solid var(--line); }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--pink-deep);
+    background:var(--pink-tint); padding:6px 12px; border-radius:20px;
+    margin-bottom:28px; letter-spacing:0.03em;
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.5fr 1fr; gap:60px; align-items:start; }
+  h1{
+    font-family:'Sora', sans-serif; font-weight:700;
+    font-size:52px; line-height:1.1; letter-spacing:-0.01em; margin-bottom:22px;
+  }
+  h1 em{ font-style:normal; color:var(--pink);}
+  .hero-sub{ font-size:18px; color:var(--ink-soft); max-width:530px; margin-bottom:32px; }
+  .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    font-family:'Inter', sans-serif; font-size:14px; font-weight:600;
+    padding:13px 22px; border-radius:8px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px; transition:transform .12s, background .15s, color .15s;
+  }
+  .btn-primary{ background:var(--pink); color:#fff; }
+  .btn-primary:hover{ background:var(--pink-deep); transform:translateY(-1px); }
+  .btn-ghost{ border:1px solid var(--ink); color:var(--ink); }
+  .btn-ghost:hover{ background:var(--ink); color:#fff; }
+
+  .id-card{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:16px; padding:20px; box-shadow:0 16px 40px -24px rgba(27,22,32,0.25);
+  }
+  .id-card img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:10px; margin-bottom:16px; }
+  .id-row{
+    display:flex; justify-content:space-between; font-size:13px;
+    color:var(--ink-soft); padding:8px 0; border-top:1px solid var(--line);
+  }
+  .id-row:first-of-type{ border-top:none; }
+  .id-row b{ color:var(--ink); font-weight:600; }
+
+  /* STATS */
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--line); }
+  .stat{ padding:30px 32px; border-left:1px solid var(--line); }
+  .stat:first-child{ border-left:none; }
+  .stat .num{ font-family:'Sora', sans-serif; font-weight:700; font-size:28px; color:var(--pink-deep); }
+  .stat .lbl{ font-size:13px; color:var(--ink-soft); margin-top:4px; }
+
+  section{ padding:84px 0; }
+  section.bordered{ border-bottom:1px solid var(--line); }
+  .section-head{ margin-bottom:44px; padding-left:56px; }
+  .section-head .kicker{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--pink-deep);
+    text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px;
+  }
+  .section-head h2{ font-family:'Sora', sans-serif; font-weight:700; font-size:30px; }
+  .section-head p{ color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:560px; }
+
+  .content-col{ padding-left:56px; }
+
+  /* PILLARS */
+  .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .pillar{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:28px; }
+  .pillar .num{ font-family:'Sora', sans-serif; font-size:13px; color:var(--pink); font-weight:700; margin-bottom:14px; display:block; }
+  .pillar h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:10px; }
+  .pillar p{ color:var(--ink-soft); font-size:14.5px; }
+
+  /* CASE STUDIES / MILESTONES */
+  .milestones{ display:flex; flex-direction:column; gap:20px; }
+  .case{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:26px 28px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center;
+  }
+  .case h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:6px; }
+  .case p{ font-size:14px; color:var(--ink-soft); }
+  .case-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pink-deep);
+    background:var(--pink-tint); padding:6px 12px; border-radius:20px; white-space:nowrap;
+  }
+  .note{
+    font-size:13px; color:var(--ink-soft); background:var(--surface); border:1px dashed var(--line);
+    border-radius:10px; padding:14px 18px; margin-top:20px;
+  }
+
+  /* WRITING LOG */
+  .log{ border-top:1px solid var(--line); }
+  .log-row{
+    display:flex; justify-content:space-between; align-items:baseline; gap:20px;
+    padding:17px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink);
+  }
+  .log-row:hover .log-title{ color:var(--pink-deep); }
+  .log-title{ font-size:15.5px; font-weight:500; transition:color .15s; }
+  .log-row .arrow{ color:var(--pink); font-size:14px; flex-shrink:0; }
+
+  /* BENCH */
+  .bench{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .bench-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:22px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:12px;
+    transition:border-color .15s, transform .15s;
+  }
+  .bench-card:hover{ border-color:var(--pink); transform:translateY(-2px); }
+  .bench-card h4{ font-family:'Sora', sans-serif; font-size:16px; }
+  .bench-card .go{ font-size:13px; color:var(--pink-deep); font-weight:600; margin-top:auto; }
+
+  /* PERSONAL */
+  .personal{ background:var(--plum); color:#F3EEF1; }
+  .personal .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding-left:32px; }
+  .personal h2{ font-family:'Sora', sans-serif; font-size:26px; margin-bottom:14px; }
+  .personal p{ color:#C8BCCC; font-size:15px; max-width:440px; }
+  .personal .kicker{ color:var(--pink); font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; display:block; }
+
+  /* CONTACT */
+  .contact-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:56px; padding-left:56px; }
+  .contact-links{ display:flex; flex-direction:column; }
+  .contact-links a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:17px 0; border-bottom:1px solid var(--line); text-decoration:none;
+    font-family:'Sora', sans-serif; font-size:18px; font-weight:600;
+    transition:padding-left .15s, color .15s;
+  }
+  .contact-links a:hover{ padding-left:8px; color:var(--pink-deep); }
+  .contact-links a span{ font-size:13px; color:var(--pink); font-weight:400; }
+
+  footer{ border-top:1px solid var(--line); padding:24px 0; font-size:13px; color:var(--ink-soft); }
+  footer .wrap{ display:flex; justify-content:space-between; }
+
+  @media (max-width:960px){
+    .thread{ display:none; }
+    .section-head, .content-col, .contact-grid{ padding-left:0; }
+    .milestone::before{ display:none; }
+  }
+  @media (max-width:860px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .stats{ grid-template-columns:repeat(2,1fr); }
+    .stat:nth-child(3){ border-left:none; }
+    .pillars{ grid-template-columns:1fr; }
+    .bench{ grid-template-columns:1fr; }
+    .personal .wrap{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .case{ grid-template-columns:1fr; }
+    nav ul{ gap:16px; }
+    h1{ font-size:36px; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="profile-picture-container mb-4">
-                <img src="nati.jpeg" alt="Nati Asher" class="profile-picture">
-            </div>
-            <h1 class="display-4">Hola! I'm Nati Asher 👋</h1>
-        </header>
 
-        <!-- Main Content -->
-        <main style="padding-top: 40px;">
-            <!-- Introduction -->
-            <section class="first-section mb-5">
-                <p class="first-paragraph">
-                    Thank you for coming over! I'm an Product Design Executive and UX Strategist, currently serving as <strong>Senior Director of Product Design at Salesforce</strong>, where I lead the amazing Field Service UX team. Before that, I designed cool stuff at Buildots, WeWork, Aqua Security, Citi, and AVG Antivirus.
-                </p>
-                <p class="first-paragraph">
-                    I mentor junior designers, I write about design, and occasionally speak or teach in public forums. Outside of work, I'm a proud mom of two curious kids (soon to be three!) and enjoy growing strawberries and tomatoes in my garden.
-                </p>
-                
-                <div class="mb-4">
-                    <a href="https://docs.google.com/document/d/1Qw-0Jf51E6m26qLTmSPa730HD1nIotpbLRekI3A5PqQ/edit?tab=t.0" target="_blank" class="cv-link">View my CV</a>
-                </div>
-            </section>
+<header>
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span>Nati Asher</div>
+    <nav>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#bench">Side projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-            <!-- Social Links -->
-            <section class="mb-5">
-                <div class="row">
-                    <div class="col">
-                        <div class="d-flex flex-wrap">
-                            <a href="https://www.facebook.com/natita04" class="social-link facebook" title="Facebook" target="_blank" style="width: 40px; height: 40px; margin-right: 10px;">
-                                <i class="fab fa-facebook-f" style="font-size: 24px !important;"></i>
-                            </a>
-                            <a href="https://www.instagram.com/ursulita04/" class="social-link instagram" title="Instagram" target="_blank" style="width: 40px; height: 40px; margin-right: 10px;">
-                                <i class="fab fa-instagram" style="font-size: 24px !important;"></i>
-                            </a>
-                           
-                            <a href="https://www.linkedin.com/in/natiasher/" class="social-link linkedin" title="LinkedIn" target="_blank" style="width: 40px; height: 40px; margin-right: 10px;">
-                                <i class="fab fa-linkedin-in" style="font-size: 24px !important;"></i>
-                            </a>
-                            <a href="https://wa.me/972543124112" class="social-link whatsapp" title="WhatsApp" target="_blank" style="width: 40px; height: 40px;">
-                                <i class="fab fa-whatsapp" style="font-size: 24px !important;"></i>
-                            </a>
-                            <a href="https://natiasher.medium.com/" class="social-link medium" title="Medium" target="_blank" style="width: 40px; height: 40px; margin-right: 10px;">
-                                <i class="fab fa-medium" style="font-size: 24px !important;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Spacing between social icons and stories -->
-            <div style="height: 40px;"></div>
-
-            <!-- Latest Stories Section -->
-            <section class="mb-5">
-                <h2 class="mb-4">My Latest Stories on Medium ✍🏼</h2>
-                
-                <div class="stories-list">
-                    <div class="story-item mb-3">
-                        <span class="story-emoji">🔥</span>
-                        <a href="https://uxdesign.cc/6-things-i-wish-product-design-candidates-would-ask-me-during-interviews-87d9f21d286e" target="_blank" class="story-link">Things I wish UX candidates would ask me during interviews</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <span class="story-emoji">🔥</span>
-                        <a href="https://uxdesign.cc/how-i-turned-from-being-a-ux-architect-into-a-product-designer-and-you-can-too-ed54e00bdac8" target="_blank" class="story-link">How I turned from being a UX Architect into a Product Designer (and you can too)</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <span class="story-emoji">🆕</span>
-                        <a href="https://bootcamp.uxdesign.cc/elevate-your-cv-insider-tips-from-a-decade-in-design-recruitment-8d6c62ffa9c8" target="_blank" class="story-link">Elevate your CV: Insider tips from a decade in design recruitment</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/about-dark-spots-and-performance-perception-f24e8b871c84" target="_blank" class="story-link">About dark spots and performance perception</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/7-things-i-learned-from-recording-7-podcast-chapters-on-ux-management-c0bc5a3b8d73" target="_blank" class="story-link">7 things I learned from recording 7 podcast chapters on UX management</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://uxdesign.cc/the-decent-way-to-recruit-product-designers-ea1b60f42ad4" target="_blank" class="story-link">The decent way to recruit product designers</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/the-unexpected-benefits-i-got-from-writing-about-product-design-b2b4d8abf6b2" target="_blank" class="story-link">The unexpected benefits I got from writing about Product Design</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/the-three-questions-your-mvp-landing-page-must-answer-d9c03aa53b8f" target="_blank" class="story-link">The three questions your MVP landing page must answer</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/knowing-the-business-a-must-skill-for-young-product-designers-c44bc3823b4a" target="_blank" class="story-link">Knowing the business: A must skill for young designers</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/how-to-avoid-getting-in-the-loop-of-overcomplicated-problems-b0be8a4a51a3" target="_blank" class="story-link">How to avoid getting in the loop of overcomplicated problems</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/why-you-should-delay-going-into-design-tools-6b75bf6b55e8" target="_blank" class="story-link">Why you should delay going into design tools</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://bootcamp.uxdesign.cc/starting-your-design-project-on-the-right-foot-b1c4b2ecd8e3" target="_blank" class="story-link">Starting your design project on the right foot</a>
-                    </div>
-                </div>
-            </section>
-
-    <!-- Spacing between social icons and stories -->
-    <div style="height: 40px;"></div>
-
-
-             <!-- Latest Stories Section -->
-             <section class="mb-5">
-                <h2 class="mb-4">Latest AI Projects 🤖</h2>
-                
-                <div class="stories-list">
-                    <div class="story-item mb-3">
-                        <a href="https://workout-timer-self-theta.vercel.app/" target="_blank" class="story-link">Workout Timer for Circuit Training</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://american-tv-map.vercel.app/" target="_blank" class="story-link">Map of Locations of American TV Series</a>
-                    </div>
-                    
-                    <div class="story-item mb-3">
-                        <a href="https://dinner-spinner-kappa.vercel.app/" target="_blank" class="story-link">What's for Dinner Spinner</a>
-                    </div>
-                    
-                    
-                </div>
-            </section>
-            
-        </main>
-
-
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Senior Director of Product Design · Salesforce</div>
+        <h1>Design leadership that turns <em>complexity</em> into a roadmap people can actually run on.</h1>
+        <p class="hero-sub">I'm Nati Asher. I lead design for a large, fast-moving product org at Salesforce, connecting design strategy to business goals across many moving parts and stakeholders. I stay close enough to the craft to know what good looks like, and I spend most of my time on the picture above it.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#work">See how I lead →</a>
+          <a class="btn btn-ghost" href="https://docs.google.com/document/d/1Qw-0Jf51E6m26qLTmSPa730HD1nIotpbLRekI3A5PqQ/edit?tab=t.0" target="_blank">Download CV</a>
+        </div>
+      </div>
+      <div class="id-card">
+        <img src="nati.jpeg" alt="Nati Asher">
+        <div class="id-row"><span>Role</span><b>Sr. Director, Product Design</b></div>
+        <div class="id-row"><span>Company</span><b>Salesforce</b></div>
+        <div class="id-row"><span>Managing since</span><b>5+ years</b></div>
+        <div class="id-row"><span>Based in</span><b>Israel</b></div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Social Icon Hover Effects Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const socialLinks = document.querySelectorAll('.social-link');
-            
-            const colors = {
-                'facebook': '#1877F2',
-                'instagram': '#E4405F', 
-                'linkedin': '#0A66C2',
-                'whatsapp': '#25D366',
-                'medium': '#000000'
-            };
-            
-            socialLinks.forEach(link => {
-                const platform = link.classList[1]; // Gets facebook, instagram, etc.
-                const originalLinkStyle = link.style.cssText;
-                const icon = link.querySelector('i');
-                const originalIconStyle = icon.style.cssText;
-                
-                link.addEventListener('mouseenter', function() {
-                    // Scale the container
-                    this.style.cssText = originalLinkStyle + 
-                        `transform: scale(1.15) !important; 
-                         transition: all 0.3s ease !important;`;
-                    
-                    // Change icon color to brand color
-                    icon.style.cssText = originalIconStyle + 
-                        `color: ${colors[platform]} !important;`;
-                });
-                
-                link.addEventListener('mouseleave', function() {
-                    this.style.cssText = originalLinkStyle;
-                    icon.style.cssText = originalIconStyle;
-                });
-            });
-        });
-    </script>
-    
+<div class="stats">
+  <div class="stat"><div class="num">5+</div><div class="lbl">Years leading design teams</div></div>
+  <div class="stat"><div class="num">6</div><div class="lbl">Companies, from startup to enterprise</div></div>
+  <div class="stat"><div class="num">12+</div><div class="lbl">Articles published on design and management</div></div>
+  <div class="stat"><div class="num">2</div><div class="lbl">Kids raised, one more on the way</div></div>
+</div>
+
+<section class="bordered" id="work">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="section-head milestone">
+      <span class="kicker">Selected work</span>
+      <h2>Case studies</h2>
+      <p>Real projects, each one a case in aligning design strategy with a business roadmap across a lot of stakeholders. Details coming soon.</p>
+    </div>
+    <div class="content-col">
+      <div class="milestones">
+        <div class="case milestone">
+          <div>
+            <h3>Add a strategy case study</h3>
+            <p>A project where you translated a business goal into a design roadmap across multiple teams. Problem, your role, the outcome.</p>
+          </div>
+          <span class="case-tag">Draft</span>
+        </div>
+        <div class="case milestone">
+          <div>
+            <h3>Add a team or org-scaling story</h3>
+            <p>How you built or grew a design org, the operating model, the people you developed.</p>
+          </div>
+          <span class="case-tag">Draft</span>
+        </div>
+        <div class="case milestone">
+          <div>
+            <h3>Add an earlier highlight</h3>
+            <p>One strong project from before Salesforce (WeWork, Buildots, Aqua, Citi, or AVG) to show range across industries.</p>
+          </div>
+          <span class="case-tag">Draft</span>
+        </div>
+      </div>
+      <div class="note">Placeholder scaffolding — send me 2–3 real projects (problem, your role, the outcome, screens if you have them) and I'll write these properly.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="section-head milestone">
+      <span class="kicker">How I lead</span>
+      <h2>Leadership pillars</h2>
+    </div>
+    <div class="content-col">
+      <div class="pillars">
+        <div class="pillar">
+          <span class="num">01</span>
+          <h3>Strategy, not just screens</h3>
+          <p>I translate business goals into a design strategy the whole org can align to, not just a set of deliverables.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">02</span>
+          <h3>Leading through complexity</h3>
+          <p>Comfortable running projects with many moving parts and stakeholders, and keeping the roadmap coherent as it grows.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">03</span>
+          <h3>Craft-literate, not craft-bound</h3>
+          <p>I still care about the details. But my strength is in seeing the broader picture and setting the bar from there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered" id="writing">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="section-head milestone" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="kicker">Writing</span>
+        <h2>Notes on design and leadership</h2>
+      </div>
+      <a class="btn btn-ghost" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
+    </div>
+    <div class="content-col">
+      <div class="log">
+        <a class="log-row" href="https://bootcamp.uxdesign.cc/elevate-your-cv-insider-tips-from-a-decade-in-design-recruitment-8d6c62ffa9c8" target="_blank">
+          <span class="log-title">Elevate your CV: insider tips from a decade in design recruitment</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="log-row" href="https://uxdesign.cc/6-things-i-wish-product-design-candidates-would-ask-me-during-interviews-87d9f21d286e" target="_blank">
+          <span class="log-title">Things I wish UX candidates would ask me during interviews</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="log-row" href="https://uxdesign.cc/how-i-turned-from-being-a-ux-architect-into-a-product-designer-and-you-can-too-ed54e00bdac8" target="_blank">
+          <span class="log-title">How I turned from being a UX architect into a product designer</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="log-row" href="https://bootcamp.uxdesign.cc/7-things-i-learned-from-recording-7-podcast-chapters-on-ux-management-c0bc5a3b8d73" target="_blank">
+          <span class="log-title">7 things I learned from recording 7 podcast chapters on UX management</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="log-row" href="https://uxdesign.cc/the-decent-way-to-recruit-product-designers-ea1b60f42ad4" target="_blank">
+          <span class="log-title">The decent way to recruit product designers</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="log-row" href="https://bootcamp.uxdesign.cc/knowing-the-business-a-must-skill-for-young-product-designers-c44bc3823b4a" target="_blank">
+          <span class="log-title">Knowing the business: a must-skill for young designers</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bench">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="section-head milestone">
+      <span class="kicker">Just for fun</span>
+      <h2>Side projects</h2>
+    </div>
+    <div class="content-col">
+      <div class="bench">
+        <a class="bench-card" href="https://kiddoz-memories.vercel.app/" target="_blank">
+          <h4>Kiddoz Memories</h4>
+          <span class="go">Visit project →</span>
+        </a>
+        <a class="bench-card" href="https://hof-ashkelon-01.vercel.app/" target="_blank">
+          <h4>Hof Ashkelon</h4>
+          <span class="go">Visit project →</span>
+        </a>
+        <a class="bench-card" href="https://workout-timer-self-theta.vercel.app/" target="_blank">
+          <h4>Workout Timer for Circuit Training</h4>
+          <span class="go">Visit project →</span>
+        </a>
+        <a class="bench-card" href="https://american-tv-map.vercel.app/" target="_blank">
+          <h4>Map of Locations of American TV Series</h4>
+          <span class="go">Visit project →</span>
+        </a>
+        <a class="bench-card" href="https://dinner-spinner-kappa.vercel.app/" target="_blank">
+          <h4>What's for Dinner Spinner</h4>
+          <span class="go">Visit project →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="personal">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Off the clock</span>
+      <h2>Mom of two (soon three), grower of strawberries and tomatoes.</h2>
+    </div>
+    <p>Outside of leading design at Salesforce, I'm raising two curious kids with a third on the way, and keeping a small garden alive one strawberry at a time.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="contact-grid">
+      <div class="milestone">
+        <span class="kicker" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--pink-deep); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:10px;">Let's talk</span>
+        <h2 style="font-family:'Sora',sans-serif; font-size:28px; line-height:1.3;">Open to conversations about design leadership, scaling design orgs, or your next hire.</h2>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/natiasher/" target="_blank">LinkedIn <span>→</span></a>
+        <a href="https://natiasher.medium.com/" target="_blank">Medium <span>→</span></a>
+        <a href="https://wa.me/972543124112" target="_blank">WhatsApp <span>→</span></a>
+        <a href="https://www.instagram.com/ursulita04/" target="_blank">Instagram <span>→</span></a>
+        <a href="https://docs.google.com/document/d/1Qw-0Jf51E6m26qLTmSPa730HD1nIotpbLRekI3A5PqQ/edit?tab=t.0" target="_blank">Download CV <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nati Asher</span>
+    <span>Senior Director of Product Design, Salesforce</span>
+  </div>
+</footer>
 
 </body>
-</html> 
+</html>
