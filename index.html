@@ -161,6 +161,8 @@
   .log-row:hover .log-title{ color:var(--pink-deep); }
   .log-title{ font-size:15.5px; font-weight:500; transition:color .15s; }
   .log-row .arrow{ color:var(--pink); font-size:14px; flex-shrink:0; }
+  .log-year{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft); margin-left:10px; }
+  .log-co{ font-size:13px; color:var(--ink-soft); margin-left:auto; white-space:nowrap; }
 
   /* BENCH */
   .bench{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -172,6 +174,7 @@
   .bench-card:hover{ border-color:var(--pink); transform:translateY(-2px); }
   .bench-card h4{ font-family:'Sora', sans-serif; font-size:16px; }
   .bench-card .go{ font-size:13px; color:var(--pink-deep); font-weight:600; margin-top:auto; }
+  .bench-card .case-tag{ align-self:flex-start; }
 
   /* PERSONAL */
   .personal{ background:var(--plum); color:#F3EEF1; }
@@ -224,6 +227,7 @@
         <li><a href="#work">Work</a></li>
         <li><a href="#writing">Writing</a></li>
         <li><a href="#bench">Side projects</a></li>
+        <li><a href="#earlier">Earlier work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -257,7 +261,7 @@
   <div class="stat"><div class="num">5+</div><div class="lbl">Years leading design teams</div></div>
   <div class="stat"><div class="num">6</div><div class="lbl">Companies, from startup to enterprise</div></div>
   <div class="stat"><div class="num">12+</div><div class="lbl">Articles published on design and management</div></div>
-  <div class="stat"><div class="num">2</div><div class="lbl">Kids raised, one more on the way</div></div>
+  <div class="stat"><div class="num">3</div><div class="lbl">Kids raised</div></div>
 </div>
 
 <section class="bordered" id="work">
@@ -367,7 +371,7 @@
   </div>
 </section>
 
-<section id="bench">
+<section class="bordered" id="bench">
   <div class="wrap">
     <div class="thread"></div>
     <div class="section-head milestone">
@@ -376,6 +380,11 @@
     </div>
     <div class="content-col">
       <div class="bench">
+        <a class="bench-card" href="https://getkiddoz.app" target="_blank">
+          <h4>Kiddoz</h4>
+          <span class="case-tag">Beta</span>
+          <span class="go">Visit getkiddoz.app →</span>
+        </a>
         <a class="bench-card" href="https://kiddoz-memories.vercel.app/" target="_blank">
           <h4>Kiddoz Memories</h4>
           <span class="go">Visit project →</span>
@@ -401,13 +410,78 @@
   </div>
 </section>
 
+<section class="bordered" id="earlier">
+  <div class="wrap">
+    <div class="thread"></div>
+    <div class="section-head milestone">
+      <span class="kicker">Before Salesforce</span>
+      <h2>Earlier work</h2>
+      <p>A look at the hands-on work I did as a full-stack product designer, from research and flows to detailed UI. Each project opens as a PDF.</p>
+    </div>
+    <div class="content-col">
+      <div class="log">
+        <a class="log-row" href="case-studies/buildots-web.pdf" target="_blank">
+          <span class="log-title">Buildots Web<span class="log-year">2020</span></span>
+          <span class="log-co">Buildots</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/buildots-ipad-app.pdf" target="_blank">
+          <span class="log-title">Buildots iPad App<span class="log-year">2020–21</span></span>
+          <span class="log-co">Buildots</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/wework-account-manager.pdf" target="_blank">
+          <span class="log-title">WeWork Account Manager<span class="log-year">2019</span></span>
+          <span class="log-co">WeWork</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/wework-community-tools.pdf" target="_blank">
+          <span class="log-title">WeWork Community Tools<span class="log-year">2019</span></span>
+          <span class="log-co">WeWork</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/aqua-container-security-platform.pdf" target="_blank">
+          <span class="log-title">Aqua Container Security Platform<span class="log-year">2018</span></span>
+          <span class="log-co">Aqua Security</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/aqua-website.pdf" target="_blank">
+          <span class="log-title">Website for Aqua Security<span class="log-year">2018</span></span>
+          <span class="log-co">Aqua Security</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/citi-vantage-trading-tool.pdf" target="_blank">
+          <span class="log-title">Vantage Trading Tool<span class="log-year">2017</span></span>
+          <span class="log-co">Citi</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/citi-mfa-login.pdf" target="_blank">
+          <span class="log-title">MFA Login<span class="log-year">2017</span></span>
+          <span class="log-co">Citi</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/citi-arena-bonds-trading.pdf" target="_blank">
+          <span class="log-title">Arena Bonds Trading<span class="log-year">2017</span></span>
+          <span class="log-co">Citi</span>
+          <span class="arrow">PDF →</span>
+        </a>
+        <a class="log-row" href="case-studies/citibuddy-chatbot.pdf" target="_blank">
+          <span class="log-title">CitiBuddy Chatbot<span class="log-year">2017</span></span>
+          <span class="log-co">Citi</span>
+          <span class="arrow">PDF →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="personal">
   <div class="wrap">
     <div>
       <span class="kicker">Off the clock</span>
-      <h2>Mom of two (soon three), grower of strawberries and tomatoes.</h2>
+      <h2>Mom of three, grower of strawberries and tomatoes.</h2>
     </div>
-    <p>Outside of leading design at Salesforce, I'm raising two curious kids with a third on the way, and keeping a small garden alive one strawberry at a time.</p>
+    <p>Outside of leading design at Salesforce, I'm raising three curious kids and keeping a small garden alive one strawberry at a time.</p>
   </div>
 </section>
 
