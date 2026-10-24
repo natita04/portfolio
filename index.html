@@ -208,6 +208,22 @@
   .log-tag{ margin-left:10px; padding:3px 9px; font-size:10px; letter-spacing:0.05em; vertical-align:2px; }
   .log-co{ font-size:13px; color:var(--ink-soft); margin-left:auto; white-space:nowrap; }
 
+  /* PODCAST */
+  .podcast{
+    margin-top:40px; display:grid; grid-template-columns:auto 1fr auto; gap:24px; align-items:center;
+    background:var(--ink); color:#F3EEF1; border-radius:14px; padding:26px 28px; text-decoration:none;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .podcast:hover{ transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--pink); }
+  .podcast-icon{
+    width:56px; height:56px; border-radius:50%; background:var(--pink); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:20px; padding-left:4px;
+  }
+  .podcast-kicker{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pink); text-transform:uppercase; letter-spacing:0.05em; }
+  .podcast h3{ font-family:'Sora', sans-serif; font-size:24px; margin:2px 0 6px; }
+  .podcast p{ font-size:14px; color:#B9AFBD; max-width:560px; }
+  .podcast .go{ font-size:13px; font-weight:600; color:#fff; white-space:nowrap; }
+
   /* BENCH */
   .bench{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
   .bench-card{
@@ -256,6 +272,7 @@
     .bench{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
     .case{ grid-template-columns:1fr; }
+    .podcast{ grid-template-columns:1fr; }
     nav ul{ gap:16px; }
     h1{ font-size:38px; }
     .section-head h2{ font-size:28px; }
@@ -426,6 +443,15 @@
           <span class="arrow">→</span>
         </a>
       </div>
+      <a class="podcast" href="https://www.youtube.com/playlist?list=PLcNbLNCXcHXA" target="_blank">
+        <span class="podcast-icon" aria-hidden="true">▶</span>
+        <div class="podcast-body">
+          <span class="podcast-kicker">Podcast</span>
+          <h3><span lang="he" dir="rtl">מנהלים חוויה</span></h3>
+          <p>While I love the written word, my day job also pushed me to become a better manager. So I hosted Israel&rsquo;s first podcast for design managers.</p>
+        </div>
+        <span class="go">Listen on YouTube →</span>
+      </a>
     </div>
   </div>
 </section>
