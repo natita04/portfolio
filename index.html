@@ -19,6 +19,7 @@
     --pink-tint:#FBE7F0;
     --plum:#382A3C;
     --lilac:#EEE8F3;
+    --lilac-deep:#7E5C9A;
     --radius:10px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -166,6 +167,7 @@
   #pillars .milestone::before{ background:var(--lilac); }
   #pillars .pillar{ border-color:rgba(56,42,60,0.14); }
   #pillars .pillar:hover{ border-color:var(--ink); }
+  #pillars .pillar .num{ -webkit-text-stroke-color:var(--lilac-deep); }
 
   /* PILLARS */
   .pillars{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
