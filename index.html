@@ -18,6 +18,7 @@
     --pink-deep:#8F1350;
     --pink-tint:#FBE7F0;
     --plum:#382A3C;
+    --lilac:#EEE8F3;
     --radius:10px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -76,9 +77,9 @@
   .hero-grid{ display:grid; grid-template-columns:1.5fr 1fr; gap:60px; align-items:start; }
   h1{
     font-family:'Sora', sans-serif; font-weight:700;
-    font-size:52px; line-height:1.1; letter-spacing:-0.01em; margin-bottom:22px;
+    font-size:60px; line-height:1.04; letter-spacing:-0.035em; margin-bottom:24px;
   }
-  h1 em{ font-style:normal; color:var(--pink);}
+  h1 em{ font-style:normal; color:var(--pink); background:linear-gradient(transparent 72%, var(--pink-tint) 72%); }
   .hero-sub{ font-size:18px; color:var(--ink-soft); max-width:530px; margin-bottom:32px; }
   .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
   .btn{
@@ -86,12 +87,13 @@
     padding:13px 22px; border-radius:8px; text-decoration:none;
     display:inline-flex; align-items:center; gap:8px; transition:transform .12s, background .15s, color .15s;
   }
-  .btn-ghost{ border:1px solid var(--ink); color:var(--ink); }
+  .btn-ghost{ border:1.5px solid var(--ink); color:var(--ink); box-shadow:4px 4px 0 var(--ink); }
+  .btn-ghost:active{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink); }
   .btn-ghost:hover{ background:var(--ink); color:#fff; }
 
   .id-card{
     background:var(--surface); border:1px solid var(--line);
-    border-radius:16px; padding:20px; box-shadow:0 16px 40px -24px rgba(27,22,32,0.25);
+    border-radius:16px; padding:20px; border-color:var(--ink); box-shadow:10px 10px 0 var(--pink);
     transform:rotate(1deg);
   }
   .id-card img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:10px; margin-bottom:16px; }
@@ -109,10 +111,34 @@
     font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--pink-deep);
     text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px;
   }
-  .section-head h2{ font-family:'Sora', sans-serif; font-weight:700; font-size:30px; }
+  .section-head h2{ font-family:'Sora', sans-serif; font-weight:700; font-size:36px; line-height:1.15; letter-spacing:-0.025em; max-width:780px; }
+  .section-head .kicker::before{ content:""; display:inline-block; width:22px; height:2px; background:currentColor; vertical-align:middle; margin-right:10px; }
   .section-head p{ color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:560px; }
 
   .content-col{ padding-left:56px; }
+
+  /* BACKGROUND BAND */
+  #background{
+    background:var(--ink); color:#F3EEF1; border-bottom:none; position:relative; overflow:hidden;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:48px 48px;
+  }
+  #background::after{
+    content:"16"; position:absolute; right:-20px; bottom:-90px;
+    font-family:'Sora', sans-serif; font-weight:800; font-size:380px; line-height:1; letter-spacing:-0.06em;
+    color:transparent; -webkit-text-stroke:2px rgba(194,27,107,0.55); pointer-events:none;
+  }
+  #background .wrap{ z-index:1; }
+  #background .kicker{ color:var(--pink); }
+  #background h2 em{ font-style:normal; color:var(--pink); }
+  #background .section-head p{ color:#B9AFBD; }
+  #background .milestone::before{ background:var(--ink); }
+  #background .thread{ background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15) 40px, rgba(255,255,255,0.15) calc(100% - 40px), transparent); }
+  #background .logos img{ filter:grayscale(1) brightness(0) invert(1); opacity:0.7; }
+  #background .logos img:hover{ opacity:1; }
+  #background .logos .logo-salesforce{ filter:grayscale(1) invert(1) brightness(1.4); }
 
   /* BACKGROUND LOGOS */
   .logos{ display:flex; flex-wrap:wrap; align-items:center; gap:28px 48px; }
@@ -124,10 +150,28 @@
   .logos .logo-wework{ height:24px; }
   .logos .logo-buildots{ height:40px; }
 
+  /* PILLARS BAND */
+  #pillars{
+    position:relative; overflow:hidden; background-color:var(--lilac);
+    background-image:radial-gradient(rgba(56,42,60,0.18) 1.2px, transparent 1.4px);
+    background-size:22px 22px;
+  }
+  #pillars::before, #pillars::after{
+    content:""; position:absolute; border-radius:50%; pointer-events:none;
+    border:2px solid rgba(56,42,60,0.3);
+  }
+  #pillars::before{ width:420px; height:420px; right:-140px; top:-160px; }
+  #pillars::after{ width:260px; height:260px; right:-60px; top:-80px; border-style:dashed; }
+  #pillars .wrap{ z-index:1; }
+  #pillars .milestone::before{ background:var(--lilac); }
+  #pillars .pillar{ border-color:rgba(56,42,60,0.14); }
+  #pillars .pillar:hover{ border-color:var(--ink); }
+
   /* PILLARS */
   .pillars{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-  .pillar{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:28px; }
-  .pillar .num{ font-family:'Sora', sans-serif; font-size:13px; color:var(--pink); font-weight:700; margin-bottom:14px; display:block; }
+  .pillar{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:28px; transition:transform .15s, box-shadow .15s, border-color .15s; }
+  .pillar:hover, .case:hover{ border-color:var(--ink); transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--ink); }
+  .pillar .num{ font-family:'Sora', sans-serif; font-size:44px; line-height:1; color:transparent; -webkit-text-stroke:1.5px var(--pink); font-weight:800; margin-bottom:16px; display:block; }
   .pillar h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:10px; }
   .pillar p{ color:var(--ink-soft); font-size:14.5px; }
 
@@ -136,6 +180,7 @@
   .case{
     background:var(--surface); border:1px solid var(--line); border-radius:14px;
     padding:26px 28px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center;
+    transition:transform .15s, box-shadow .15s, border-color .15s;
   }
   .case h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:6px; }
   .case p{ font-size:14px; color:var(--ink-soft); }
@@ -166,9 +211,9 @@
   .bench-card{
     background:var(--surface); border:1px solid var(--line); border-radius:14px;
     padding:22px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:12px;
-    transition:border-color .15s, transform .15s;
+    transition:border-color .15s, transform .15s, box-shadow .15s;
   }
-  .bench-card:hover{ border-color:var(--pink); transform:translateY(-2px); }
+  .bench-card:hover{ border-color:var(--ink); transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--pink); }
   .bench-card h4{ font-family:'Sora', sans-serif; font-size:16px; }
   .bench-card .go{ font-size:13px; color:var(--pink-deep); font-weight:600; margin-top:auto; }
   .bench-feature{ grid-column:1 / -1; }
@@ -210,7 +255,9 @@
     .contact-grid{ grid-template-columns:1fr; }
     .case{ grid-template-columns:1fr; }
     nav ul{ gap:16px; }
-    h1{ font-size:36px; }
+    h1{ font-size:38px; }
+    .section-head h2{ font-size:28px; }
+    #background::after{ font-size:220px; bottom:-50px; }
   }
 </style>
 </head>
@@ -221,10 +268,6 @@
     <div class="brand"><span class="dot"></span>Nati Asher</div>
     <nav>
       <ul>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#bench">Side projects</a></li>
-        <li><a href="#earlier">Earlier work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -251,12 +294,12 @@
   </div>
 </section>
 
-<section class="bordered" id="background">
+<section id="background">
   <div class="wrap">
     <div class="thread"></div>
     <div class="section-head milestone">
       <span class="kicker">Background</span>
-      <h2>16 years in product design, the last 5 leading design teams.</h2>
+      <h2><em>16 years</em> in product design, the last 5 leading design teams.</h2>
       <p>I spent over a decade as a hands-on product designer, from consumer security to banking, workspaces and construction tech, before moving into design management.</p>
     </div>
     <div class="content-col">
@@ -309,7 +352,7 @@
   </div>
 </section>
 
-<section class="bordered">
+<section id="pillars">
   <div class="wrap">
     <div class="thread"></div>
     <div class="section-head milestone">
@@ -350,6 +393,7 @@
       <div>
         <span class="kicker">Writing</span>
         <h2>Notes on design and leadership</h2>
+        <p>I&rsquo;ve loved the printed word since I was young, and writing is still where I think most clearly. Most of these pieces started as notes to help a friend or to sort out my own thinking on a topic.</p>
       </div>
       <a class="btn btn-ghost" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
     </div>
