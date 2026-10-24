@@ -179,9 +179,8 @@
 
   /* PERSONAL */
   .personal{ background:var(--plum); color:#F3EEF1; }
-  .personal .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding-left:32px; }
-  .personal h2{ font-family:'Sora', sans-serif; font-size:26px; margin-bottom:14px; }
-  .personal p{ color:#C8BCCC; font-size:15px; max-width:440px; }
+  .personal .wrap{ padding-left:32px; }
+  .personal h2{ font-family:'Sora', sans-serif; font-size:26px; line-height:1.4; max-width:760px; }
   .personal .kicker{ color:var(--pink); font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; display:block; }
 
   /* CONTACT */
@@ -194,6 +193,9 @@
     transition:padding-left .15s, color .15s;
   }
   .contact-links a:hover{ padding-left:8px; color:var(--pink-deep); }
+  .contact-direct{ display:flex; flex-direction:column; gap:6px; margin-top:24px; }
+  .contact-direct a{ font-size:16px; color:var(--ink-soft); text-decoration:none; transition:color .15s; }
+  .contact-direct a:hover{ color:var(--pink-deep); }
   .contact-links a span{ font-size:13px; color:var(--pink); font-weight:400; }
 
   footer{ border-top:1px solid var(--line); padding:24px 0; font-size:13px; color:var(--ink-soft); }
@@ -210,7 +212,6 @@
     .stat:nth-child(3){ border-left:none; }
     .pillars{ grid-template-columns:1fr; }
     .bench{ grid-template-columns:1fr; }
-    .personal .wrap{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
     .case{ grid-template-columns:1fr; }
     nav ul{ gap:16px; }
@@ -479,9 +480,8 @@
   <div class="wrap">
     <div>
       <span class="kicker">Off the clock</span>
-      <h2>Mom of three, grower of strawberries and tomatoes.</h2>
+      <h2>Outside of leading design at Salesforce, I'm raising three curious kids and keeping a small garden alive one strawberry at a time.</h2>
     </div>
-    <p>Outside of leading design at Salesforce, I'm raising three curious kids and keeping a small garden alive one strawberry at a time.</p>
   </div>
 </section>
 
@@ -492,6 +492,10 @@
       <div class="milestone">
         <span class="kicker" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--pink-deep); text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:10px;">Let's talk</span>
         <h2 style="font-family:'Sora',sans-serif; font-size:28px; line-height:1.3;">Open to conversations about design leadership, scaling design orgs, or your next hire.</h2>
+        <div class="contact-direct">
+          <a href="mailto:nati04@gmail.com">nati04@gmail.com</a>
+          <a href="tel:+972543124112">+972 54 312 4112</a>
+        </div>
       </div>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/natiasher/" target="_blank">LinkedIn <span>→</span></a>
