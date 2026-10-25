@@ -20,6 +20,7 @@
     --plum:#382A3C;
     --lilac:#EEE8F3;
     --lilac-deep:#7E5C9A;
+    --lilac-dark:#4A3460;
     --orange:#FF7A3D;
     --orange-deep:#B4470F;
     --orange-tint:#FFF0E6;
@@ -281,12 +282,15 @@
 
   /* PERSONAL */
   .personal{
-    background-color:var(--lilac-deep); color:#fff; position:relative; overflow:hidden;
-    background-image:radial-gradient(rgba(255,255,255,0.14) 1.2px, transparent 1.4px); background-size:22px 22px;
+    color:#fff; position:relative; overflow:hidden; padding:140px 0;
+    background:
+      linear-gradient(90deg, var(--lilac-dark) 0%, rgba(74,52,96,0.88) 42%, rgba(74,52,96,0.45) 100%),
+      url("images/kids.jpg") 70% 35% / cover no-repeat;
   }
   .personal::after{
-    content:""; position:absolute; right:-80px; top:50%; width:300px; height:300px; transform:translateY(-50%);
-    border-radius:50%; border:2px solid rgba(238,232,243,0.45); box-shadow:0 0 0 40px rgba(238,232,243,0.06); pointer-events:none;
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,0.12) 1.2px, transparent 1.4px); background-size:22px 22px;
+    -webkit-mask-image:linear-gradient(90deg, #000, transparent 60%); mask-image:linear-gradient(90deg, #000, transparent 60%);
   }
   .personal .wrap{ z-index:1; }
   .personal .wrap{ padding-left:32px; }
@@ -323,6 +327,7 @@
     .contact-grid{ grid-template-columns:1fr; }
     .case{ grid-template-columns:1fr; }
     .podcast{ grid-template-columns:1fr; }
+    .personal{ background:linear-gradient(rgba(74,52,96,0.82), rgba(74,52,96,0.82)), url("images/kids.jpg") 60% 35% / cover no-repeat; padding:100px 0; }
     nav ul{ gap:16px; }
     h1{ font-size:38px; }
     .section-head h2{ font-size:28px; }
