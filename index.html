@@ -198,6 +198,14 @@
     font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pink-deep);
     background:var(--pink-tint); padding:6px 12px; border-radius:20px; white-space:nowrap;
   }
+  details.case{ display:block; }
+  .case-earlier summary{ list-style:none; cursor:pointer; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
+  .case-earlier summary::-webkit-details-marker{ display:none; }
+  .case-earlier summary:focus-visible{ outline:2px solid var(--pink); outline-offset:6px; border-radius:6px; }
+  .case-earlier .chev{ display:inline-block; margin-left:4px; transition:transform .2s; }
+  .case-earlier[open] .chev{ transform:rotate(180deg); }
+  .case-earlier[open]{ transform:none; box-shadow:6px 6px 0 var(--ink); border-color:var(--ink); }
+  .earlier-log{ margin-top:22px; }
   .note{
     font-size:13px; color:var(--ink-soft); background:var(--surface); border:1px dashed var(--line);
     border-radius:10px; padding:14px 18px; margin-top:20px;
@@ -325,7 +333,7 @@
     .pillars{ grid-template-columns:1fr; }
     .bench{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; }
-    .case{ grid-template-columns:1fr; }
+    .case, .case-earlier summary{ grid-template-columns:1fr; }
     .podcast{ grid-template-columns:1fr; }
     .personal{ background:linear-gradient(rgba(74,52,96,0.82), rgba(74,52,96,0.82)), url("images/kids.jpg") 60% 50% / cover no-repeat; padding:100px 0; }
     nav ul{ gap:16px; }
@@ -413,13 +421,67 @@
           </div>
           <span class="case-tag">Draft</span>
         </div>
-        <div class="case milestone">
-          <div>
-            <h3>Add an earlier highlight</h3>
-            <p>One strong project from before Salesforce (WeWork, Buildots, Aqua, Citi, or AVG) to show range across industries.</p>
-          </div>
-          <span class="case-tag">Draft</span>
-        </div>
+        <details class="case case-earlier milestone">
+          <summary>
+            <div>
+              <h3>Earlier work, before Salesforce</h3>
+              <p>Hands-on work from my years as a full-stack product designer at Buildots, WeWork, Aqua and Citi, from research and flows to detailed UI. Each project opens as a PDF.</p>
+            </div>
+            <span class="case-tag">10 projects <span class="chev" aria-hidden="true">▾</span></span>
+          </summary>
+            <div class="log earlier-log">
+              <a class="log-row" href="case-studies/buildots-web.pdf" target="_blank">
+                <span class="log-title">Buildots Web<span class="log-year">2020</span></span>
+                <span class="log-co">Buildots</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/buildots-ipad-app.pdf" target="_blank">
+                <span class="log-title">Buildots iPad App<span class="log-year">2020–21</span></span>
+                <span class="log-co">Buildots</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/wework-account-manager.pdf" target="_blank">
+                <span class="log-title">WeWork Account Manager<span class="log-year">2019</span></span>
+                <span class="log-co">WeWork</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/wework-community-tools.pdf" target="_blank">
+                <span class="log-title">WeWork Community Tools<span class="log-year">2019</span></span>
+                <span class="log-co">WeWork</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/aqua-container-security-platform.pdf" target="_blank">
+                <span class="log-title">Aqua Container Security Platform<span class="log-year">2018</span></span>
+                <span class="log-co">Aqua Security</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/aqua-website.pdf" target="_blank">
+                <span class="log-title">Website for Aqua Security<span class="log-year">2018</span></span>
+                <span class="log-co">Aqua Security</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/citi-vantage-trading-tool.pdf" target="_blank">
+                <span class="log-title">Vantage Trading Tool<span class="log-year">2017</span></span>
+                <span class="log-co">Citi</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/citi-mfa-login.pdf" target="_blank">
+                <span class="log-title">MFA Login<span class="log-year">2017</span></span>
+                <span class="log-co">Citi</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/citi-arena-bonds-trading.pdf" target="_blank">
+                <span class="log-title">Arena Bonds Trading<span class="log-year">2017</span></span>
+                <span class="log-co">Citi</span>
+                <span class="arrow">PDF →</span>
+              </a>
+              <a class="log-row" href="case-studies/citibuddy-chatbot.pdf" target="_blank">
+                <span class="log-title">CitiBuddy Chatbot<span class="log-year">2017</span></span>
+                <span class="log-co">Citi</span>
+                <span class="arrow">PDF →</span>
+              </a>
+            </div>
+        </details>
       </div>
       <div class="note">Placeholder scaffolding — send me 2–3 real projects (problem, your role, the outcome, screens if you have them) and I'll write these properly.</div>
     </div>
@@ -537,71 +599,6 @@
         <a class="bench-card" href="https://workout-timer-self-theta.vercel.app/" target="_blank">
           <h4>Workout Timer for Circuit Training</h4>
           <span class="go">Visit project →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bordered" id="earlier">
-  <div class="wrap">
-    <div class="thread"></div>
-    <div class="section-head milestone">
-      <span class="kicker">Before Salesforce</span>
-      <h2>Earlier work</h2>
-      <p>A look at the hands-on work I did as a full-stack product designer, from research and flows to detailed UI. Each project opens as a PDF.</p>
-    </div>
-    <div class="content-col">
-      <div class="log">
-        <a class="log-row" href="case-studies/buildots-web.pdf" target="_blank">
-          <span class="log-title">Buildots Web<span class="log-year">2020</span></span>
-          <span class="log-co">Buildots</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/buildots-ipad-app.pdf" target="_blank">
-          <span class="log-title">Buildots iPad App<span class="log-year">2020–21</span></span>
-          <span class="log-co">Buildots</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/wework-account-manager.pdf" target="_blank">
-          <span class="log-title">WeWork Account Manager<span class="log-year">2019</span></span>
-          <span class="log-co">WeWork</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/wework-community-tools.pdf" target="_blank">
-          <span class="log-title">WeWork Community Tools<span class="log-year">2019</span></span>
-          <span class="log-co">WeWork</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/aqua-container-security-platform.pdf" target="_blank">
-          <span class="log-title">Aqua Container Security Platform<span class="log-year">2018</span></span>
-          <span class="log-co">Aqua Security</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/aqua-website.pdf" target="_blank">
-          <span class="log-title">Website for Aqua Security<span class="log-year">2018</span></span>
-          <span class="log-co">Aqua Security</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/citi-vantage-trading-tool.pdf" target="_blank">
-          <span class="log-title">Vantage Trading Tool<span class="log-year">2017</span></span>
-          <span class="log-co">Citi</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/citi-mfa-login.pdf" target="_blank">
-          <span class="log-title">MFA Login<span class="log-year">2017</span></span>
-          <span class="log-co">Citi</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/citi-arena-bonds-trading.pdf" target="_blank">
-          <span class="log-title">Arena Bonds Trading<span class="log-year">2017</span></span>
-          <span class="log-co">Citi</span>
-          <span class="arrow">PDF →</span>
-        </a>
-        <a class="log-row" href="case-studies/citibuddy-chatbot.pdf" target="_blank">
-          <span class="log-title">CitiBuddy Chatbot<span class="log-year">2017</span></span>
-          <span class="log-co">Citi</span>
-          <span class="arrow">PDF →</span>
         </a>
       </div>
     </div>
