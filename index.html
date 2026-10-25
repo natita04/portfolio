@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nati Asher — Senior Director of Product Design</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Rubik:wght@600;700&display=swap" rel="stylesheet">
@@ -24,6 +27,13 @@
     --orange:#FF7A3D;
     --orange-deep:#B4470F;
     --orange-tint:#FFF0E6;
+    --red:#E0443A;
+    --red-deep:#B32A22;
+    --red-tint:#FDECEA;
+    --wine:#4A1A1E;
+    --accent:var(--pink);
+    --accent-deep:var(--pink-deep);
+    --accent-tint:var(--pink-tint);
     --radius:10px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -35,7 +45,7 @@
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--pink); color:#fff;}
+  ::selection{background:var(--accent); color:#fff;}
   a{color:inherit;}
   .mono{font-family:'IBM Plex Mono', monospace;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 32px; position:relative;}
@@ -49,17 +59,19 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:18px 32px; max-width:1080px; margin:0 auto;
   }
-  .brand{
-    display:flex; align-items:center; gap:8px;
-    font-family:'Sora', sans-serif; font-weight:700; font-size:18px;
-  }
-  .brand .dot{width:8px; height:8px; border-radius:50%; background:var(--pink);}
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .brand-mark{ width:34px; height:34px; transition:transform .2s; }
+  .brand-mark rect{ fill:var(--ink); }
+  .brand-mark path{ fill:none; stroke:#fff; stroke-width:6.5; stroke-linecap:round; stroke-linejoin:round; }
+  .brand-mark circle{ fill:var(--pink); }
+  .brand:hover .brand-mark{ transform:rotate(-6deg); }
+  .brand-name{ font-family:'Sora', sans-serif; font-weight:600; font-size:17px; letter-spacing:-0.01em; }
   nav ul{list-style:none; display:flex; gap:30px;}
   nav a{
     font-size:13px; text-decoration:none; color:var(--ink-soft);
     font-weight:500; letter-spacing:0.01em; transition:color .15s;
   }
-  nav a:hover{color:var(--pink-deep);}
+  nav a:hover{color:var(--accent-deep);}
 
   /* ROADMAP THREAD — the throughline device */
   .thread{
@@ -74,7 +86,7 @@
   .milestone::before{
     content:""; position:absolute; left:-38px; top:6px;
     width:11px; height:11px; border-radius:50%;
-    background:var(--bg); border:2px solid var(--pink);
+    background:var(--bg); border:2px solid var(--accent);
   }
 
   /* HERO */
@@ -84,7 +96,7 @@
     font-family:'Sora', sans-serif; font-weight:700;
     font-size:60px; line-height:1.04; letter-spacing:-0.035em; margin-bottom:24px;
   }
-  h1 em{ font-style:normal; color:var(--pink); background:linear-gradient(transparent 72%, var(--pink-tint) 72%); }
+  h1 em{ font-style:normal; color:var(--accent); background:linear-gradient(transparent 72%, var(--accent-tint) 72%); }
   .hero-sub{ font-size:18px; color:var(--ink-soft); max-width:530px; margin-bottom:32px; }
   .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
   .btn{
@@ -98,7 +110,7 @@
 
   .id-card{
     background:var(--surface); border:1px solid var(--line);
-    border-radius:16px; padding:20px; border-color:var(--ink); box-shadow:10px 10px 0 var(--pink);
+    border-radius:16px; padding:20px; border-color:var(--ink); box-shadow:10px 10px 0 var(--accent);
     transform:rotate(1deg);
   }
   .id-card img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:10px; margin-bottom:16px; }
@@ -113,7 +125,7 @@
   section.bordered{ border-bottom:1px solid var(--line); }
   .section-head{ margin-bottom:44px; padding-left:56px; }
   .section-head .kicker{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--pink-deep);
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent-deep);
     text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px;
   }
   .section-head h2{ font-family:'Sora', sans-serif; font-weight:700; font-size:36px; line-height:1.15; letter-spacing:-0.025em; max-width:780px; }
@@ -122,8 +134,14 @@
 
   .content-col{ padding-left:56px; }
   .head-row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px 24px; flex-wrap:wrap; }
-  .head-link{ font-size:14px; font-weight:600; color:var(--pink-deep); text-decoration:none; white-space:nowrap; transition:color .15s; }
-  .head-link:hover{ color:var(--pink); }
+  .head-link{ font-size:14px; font-weight:600; color:var(--accent-deep); text-decoration:none; white-space:nowrap; transition:color .15s; }
+  .head-link:hover{ color:var(--accent); }
+
+  /* SECTION PALETTES */
+  #background, #work{ --accent:var(--orange); --accent-deep:var(--orange-deep); --accent-tint:var(--orange-tint); }
+  #pillars, #writing{ --accent:var(--lilac-deep); --accent-deep:var(--lilac-deep); --accent-tint:var(--lilac); }
+  #bench, .personal{ --accent:var(--red); --accent-deep:var(--red-deep); --accent-tint:var(--red-tint); }
+  #work .log-row .arrow{ color:var(--accent-deep); }
 
   /* BACKGROUND BAND */
   #background{
@@ -181,7 +199,7 @@
   .pillars{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
   .pillar{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:28px; transition:transform .15s, box-shadow .15s, border-color .15s; }
   .pillar:hover, .case:hover{ border-color:var(--ink); transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--ink); }
-  .pillar .num{ font-family:'Sora', sans-serif; font-size:44px; line-height:1; color:transparent; -webkit-text-stroke:1.5px var(--pink); font-weight:800; margin-bottom:16px; display:block; }
+  .pillar .num{ font-family:'Sora', sans-serif; font-size:44px; line-height:1; color:transparent; -webkit-text-stroke:1.5px var(--accent); font-weight:800; margin-bottom:16px; display:block; }
   .pillar h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:10px; }
   .pillar p{ color:var(--ink-soft); font-size:14.5px; }
 
@@ -195,13 +213,13 @@
   .case h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:6px; }
   .case p{ font-size:14px; color:var(--ink-soft); }
   .case-tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pink-deep);
-    background:var(--pink-tint); padding:6px 12px; border-radius:20px; white-space:nowrap;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--accent-deep);
+    background:var(--accent-tint); padding:6px 12px; border-radius:20px; white-space:nowrap;
   }
   details.case{ display:block; }
   .case-earlier summary{ list-style:none; cursor:pointer; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
   .case-earlier summary::-webkit-details-marker{ display:none; }
-  .case-earlier summary:focus-visible{ outline:2px solid var(--pink); outline-offset:6px; border-radius:6px; }
+  .case-earlier summary:focus-visible{ outline:2px solid var(--accent); outline-offset:6px; border-radius:6px; }
   .case-earlier .chev{ display:inline-block; margin-left:4px; transition:transform .2s; }
   .case-earlier[open] .chev{ transform:rotate(180deg); }
   .case-earlier[open]{ transform:none; box-shadow:6px 6px 0 var(--ink); border-color:var(--ink); }
@@ -217,9 +235,9 @@
     display:flex; justify-content:space-between; align-items:baseline; gap:20px;
     padding:17px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink);
   }
-  .log-row:hover .log-title{ color:var(--pink-deep); }
+  .log-row:hover .log-title{ color:var(--accent-deep); }
   .log-title{ font-size:15.5px; font-weight:500; transition:color .15s; }
-  .log-row .arrow{ color:var(--pink); font-size:14px; flex-shrink:0; }
+  .log-row .arrow{ color:var(--accent); font-size:14px; flex-shrink:0; }
   .log-year{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft); margin-left:10px; }
   .log-tag{ margin-left:10px; padding:3px 9px; font-size:10px; letter-spacing:0.05em; vertical-align:2px; }
   .log-co{ font-size:13px; color:var(--ink-soft); margin-left:auto; white-space:nowrap; }
@@ -230,25 +248,25 @@
     background:var(--ink); color:#F3EEF1; border-radius:14px; padding:26px 28px; text-decoration:none;
     transition:transform .15s, box-shadow .15s; position:relative; overflow:hidden; isolation:isolate;
     background-image:
-      radial-gradient(circle at 56px 50%, rgba(194,27,107,0.45), transparent 220px),
-      radial-gradient(circle at 100% 0%, rgba(126,92,154,0.45), transparent 340px);
+      radial-gradient(circle at 56px 50%, rgba(126,92,154,0.6), transparent 220px),
+      radial-gradient(circle at 100% 0%, rgba(126,92,154,0.35), transparent 340px);
   }
   .podcast > *:not(.podcast-wave){ position:relative; z-index:1; }
   .podcast-wave{
     position:absolute; right:0; top:50%; transform:translateY(-50%); width:62%; height:80%;
-    fill:var(--pink); opacity:0.22; z-index:0;
+    fill:#C9B6DB; opacity:0.2; z-index:0;
     -webkit-mask-image:linear-gradient(to right, transparent, #000 40%);
             mask-image:linear-gradient(to right, transparent, #000 40%);
     transition:opacity .2s;
   }
   .podcast:hover .podcast-wave{ opacity:0.38; }
-  .podcast-icon{ box-shadow:0 0 0 8px rgba(194,27,107,0.18), 0 0 0 16px rgba(194,27,107,0.08); }
-  .podcast:hover{ transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--pink); }
+  .podcast-icon{ box-shadow:0 0 0 8px rgba(126,92,154,0.3), 0 0 0 16px rgba(126,92,154,0.12); }
+  .podcast:hover{ transform:translate(-3px,-3px); box-shadow:6px 6px 0 #C9B6DB; }
   .podcast-icon{
-    width:56px; height:56px; border-radius:50%; background:var(--pink); color:#fff;
+    width:56px; height:56px; border-radius:50%; background:var(--accent); color:#fff;
     display:flex; align-items:center; justify-content:center; font-size:20px; padding-left:4px;
   }
-  .podcast-kicker{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pink); text-transform:uppercase; letter-spacing:0.05em; }
+  .podcast-kicker{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:#C9B6DB; text-transform:uppercase; letter-spacing:0.05em; }
   .podcast h3{ font-family:'Sora', sans-serif; font-size:24px; margin:2px 0 6px; }
   .podcast h3 [lang="he"]{ font-family:'Rubik', sans-serif; font-weight:700; font-size:26px; }
   .podcast p{ font-size:14px; color:#B9AFBD; max-width:560px; }
@@ -256,24 +274,24 @@
 
   /* BENCH BAND */
   #bench{
-    position:relative; overflow:hidden; background-color:var(--orange-tint);
-    background-image:repeating-linear-gradient(135deg, rgba(255,122,61,0.14) 0 1px, transparent 1px 18px);
+    position:relative; overflow:hidden; background-color:var(--red-tint);
+    background-image:repeating-linear-gradient(135deg, rgba(224,68,58,0.12) 0 1px, transparent 1px 18px);
   }
   #bench::before{
     content:""; position:absolute; left:-120px; bottom:-140px; width:360px; height:360px; pointer-events:none;
-    border:2px solid rgba(255,122,61,0.55); border-radius:40% 60% 55% 45% / 50% 40% 60% 50%; transform:rotate(-12deg);
+    border:2px solid rgba(224,68,58,0.45); border-radius:40% 60% 55% 45% / 50% 40% 60% 50%; transform:rotate(-12deg);
   }
   #bench::after{
     content:""; position:absolute; right:8%; top:48px; width:120px; height:120px; pointer-events:none;
-    background-image:radial-gradient(rgba(255,122,61,0.6) 2px, transparent 2.5px); background-size:16px 16px;
+    background-image:radial-gradient(rgba(224,68,58,0.5) 2px, transparent 2.5px); background-size:16px 16px;
   }
   #bench .wrap{ z-index:1; }
-  #bench .kicker{ color:var(--orange-deep); }
-  #bench .milestone::before{ background:var(--orange-tint); border-color:var(--orange-deep); }
-  #bench .bench-card{ border-color:rgba(255,122,61,0.3); }
-  #bench .bench-card:hover{ border-color:var(--ink); box-shadow:6px 6px 0 var(--orange); }
-  #bench .bench-card .go{ color:var(--orange-deep); }
-  #bench .case-tag{ color:var(--orange-deep); background:var(--orange-tint); }
+  #bench .kicker{ color:var(--red-deep); }
+  #bench .milestone::before{ background:var(--red-tint); border-color:var(--red-deep); }
+  #bench .bench-card{ border-color:rgba(224,68,58,0.25); }
+  #bench .bench-card:hover{ border-color:var(--ink); box-shadow:6px 6px 0 var(--red); }
+  #bench .bench-card .go{ color:var(--red-deep); }
+  #bench .case-tag{ color:var(--red-deep); background:var(--red-tint); }
 
   /* BENCH */
   .bench{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -282,9 +300,9 @@
     padding:22px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:12px;
     transition:border-color .15s, transform .15s, box-shadow .15s;
   }
-  .bench-card:hover{ border-color:var(--ink); transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--pink); }
+  .bench-card:hover{ border-color:var(--ink); transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--accent); }
   .bench-card h4{ font-family:'Sora', sans-serif; font-size:16px; }
-  .bench-card .go{ font-size:13px; color:var(--pink-deep); font-weight:600; margin-top:auto; }
+  .bench-card .go{ font-size:13px; color:var(--accent-deep); font-weight:600; margin-top:auto; }
   .bench-feature{ grid-column:1 / -1; }
   .bench-tag{ margin-left:6px; padding:2px 7px; font-size:10px; font-weight:500; vertical-align:3px; }
 
@@ -292,7 +310,7 @@
   .personal{
     color:#fff; position:relative; overflow:hidden; padding:140px 0; min-height:min(48vw, 640px); display:flex; align-items:center;
     background:
-      linear-gradient(90deg, var(--lilac-dark) 0%, rgba(74,52,96,0.88) 42%, rgba(74,52,96,0.45) 100%),
+      linear-gradient(90deg, var(--wine) 0%, rgba(74,26,30,0.88) 42%, rgba(74,26,30,0.45) 100%),
       url("images/kids.jpg") 70% 50% / cover no-repeat;
   }
   .personal::after{
@@ -303,7 +321,7 @@
   .personal .wrap{ z-index:1; width:100%; }
   .personal .wrap{ padding-left:32px; }
   .personal h2{ font-family:'Sora', sans-serif; font-size:26px; line-height:1.4; max-width:760px; }
-  .personal .kicker{ color:var(--lilac); font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; display:block; }
+  .personal .kicker{ color:#F6B8B2; font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; display:block; }
 
   /* CONTACT */
   .contact-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:56px; padding-left:56px; }
@@ -314,11 +332,11 @@
     font-family:'Sora', sans-serif; font-size:18px; font-weight:600;
     transition:padding-left .15s, color .15s;
   }
-  .contact-links a:hover{ padding-left:8px; color:var(--pink-deep); }
+  .contact-links a:hover{ padding-left:8px; color:var(--accent-deep); }
   .contact-direct{ display:flex; flex-direction:column; gap:6px; margin-top:24px; }
   .contact-direct a{ font-size:16px; color:var(--ink-soft); text-decoration:none; transition:color .15s; }
-  .contact-direct a:hover{ color:var(--pink-deep); }
-  .contact-links a span{ font-size:13px; color:var(--pink); font-weight:400; }
+  .contact-direct a:hover{ color:var(--accent-deep); }
+  .contact-links a span{ font-size:13px; color:var(--accent); font-weight:400; }
 
   footer{ border-top:1px solid var(--line); padding:24px 0; font-size:13px; color:var(--ink-soft); }
   footer .wrap{ display:flex; justify-content:space-between; }
@@ -335,7 +353,7 @@
     .contact-grid{ grid-template-columns:1fr; }
     .case, .case-earlier summary{ grid-template-columns:1fr; }
     .podcast{ grid-template-columns:1fr; }
-    .personal{ background:linear-gradient(rgba(74,52,96,0.82), rgba(74,52,96,0.82)), url("images/kids.jpg") 60% 50% / cover no-repeat; padding:100px 0; }
+    .personal{ background:linear-gradient(rgba(74,26,30,0.82), rgba(74,26,30,0.82)), url("images/kids.jpg") 60% 50% / cover no-repeat; padding:100px 0; }
     nav ul{ gap:16px; }
     h1{ font-size:38px; }
     .section-head h2{ font-size:28px; }
@@ -343,11 +361,14 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <div class="nav-inner">
-    <div class="brand"><span class="dot"></span>Nati Asher</div>
+    <a class="brand" href="#top" aria-label="Nati Asher, back to top">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16"/><path d="M17 45V19l20 26V19"/><circle cx="47.5" cy="44" r="4.5"/></svg>
+      <span class="brand-name">Nati Asher</span>
+    </a>
     <nav>
       <ul>
         <li><a href="#contact">Contact</a></li>
