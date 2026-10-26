@@ -60,9 +60,9 @@
     padding:18px 32px; max-width:1080px; margin:0 auto;
   }
   .brand{ display:flex; align-items:center; text-decoration:none; color:var(--ink); }
-  .brand-mark{ font-family:'Cedarville Cursive', cursive; font-size:44px; line-height:1; display:inline-block; padding:6px 6px 0 2px; transition:color .2s, transform .2s; }
+  .brand-mark{ font-family:'Cedarville Cursive', cursive; font-size:36px; line-height:1; display:inline-block; padding:6px 6px 0 2px; white-space:nowrap; transition:color .2s, transform .2s; }
   .brand:hover{ color:var(--pink); }
-  .brand:hover .brand-mark{ transform:rotate(-6deg); }
+  .brand:hover .brand-mark{ transform:rotate(-3deg); }
   nav ul{list-style:none; display:flex; gap:30px;}
   nav a{
     font-size:13px; text-decoration:none; color:var(--ink-soft);
@@ -211,9 +211,9 @@
   .case h3{ font-family:'Sora', sans-serif; font-size:19px; margin-bottom:6px; }
   .case p{ font-size:14px; color:var(--ink-soft); }
   .case-tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--accent-deep);
-    background:var(--accent-tint); padding:6px 12px; border-radius:20px; white-space:nowrap;
-    text-transform:uppercase; letter-spacing:0.04em;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:500; line-height:1.4; color:var(--accent-deep);
+    background:var(--accent-tint); padding:4px 10px; border-radius:20px; white-space:nowrap;
+    text-transform:uppercase; letter-spacing:0.04em; display:inline-block;
   }
   details.case{ display:block; }
   .case-earlier summary{ list-style:none; cursor:pointer; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
@@ -234,7 +234,7 @@
   .log-title{ font-size:15.5px; font-weight:500; transition:color .15s; }
   .log-row .arrow{ color:var(--accent); font-size:14px; flex-shrink:0; }
   .log-year{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft); margin-left:10px; }
-  .log-tag{ margin-left:10px; padding:3px 9px; font-size:10px; letter-spacing:0.05em; vertical-align:2px; }
+  .log-tag{ margin-left:10px; vertical-align:2px; }
   .log-co{ font-size:13px; color:var(--ink-soft); margin-left:auto; white-space:nowrap; }
 
   /* PODCAST */
@@ -300,7 +300,7 @@
   .bench-desc{ font-size:14px; line-height:1.55; color:var(--ink-soft); }
   .bench-card .go{ font-size:13px; color:var(--accent-deep); font-weight:600; margin-top:auto; }
   .bench-feature{ grid-column:1 / -1; }
-  .bench-tag{ margin-left:6px; padding:2px 7px; font-size:10px; font-weight:500; vertical-align:3px; }
+  .bench-tag{ margin-left:8px; vertical-align:2px; }
 
   /* PERSONAL */
   .personal{
@@ -336,9 +336,6 @@
 
   footer{ border-top:1px solid var(--line); padding:24px 0; font-size:13px; color:var(--ink-soft); }
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
-  .signature{ font-family:'Cedarville Cursive', cursive; font-size:44px; line-height:1; color:var(--ink); display:inline-block; padding:8px 4px 0; }
-  .footer-meta{ text-align:right; }
-  .footer-meta small{ font-size:inherit; }
 
   @media (max-width:960px){
     .thread{ display:none; }
@@ -354,7 +351,6 @@
     .podcast{ grid-template-columns:1fr; }
     .head-row .head-link{ display:none; }
     .head-link-after{ display:inline-block; margin-top:20px; }
-    .footer-meta{ text-align:left; }
     .personal{ background:linear-gradient(rgba(74,26,30,0.82), rgba(74,26,30,0.82)), url("images/kids.jpg") 60% 45% / cover no-repeat; padding:100px 0; }
     nav ul{ gap:16px; }
     h1{ font-size:38px; }
@@ -368,7 +364,7 @@
 <header>
   <div class="nav-inner">
     <a class="brand" href="#top" aria-label="Nati Asher, back to top">
-      <span class="brand-mark" aria-hidden="true">N</span>
+      <span class="brand-mark" aria-hidden="true">Nati Asher</span>
     </a>
     <nav>
       <ul>
@@ -665,8 +661,8 @@
 
 <footer>
   <div class="wrap">
-    <span class="signature" aria-label="Nati Asher">Nati Asher</span>
-    <span class="footer-meta">You made it all the way here? I&rsquo;m honored.<br><small>© 2026 Nati Asher</small></span>
+    <span>© 2026 Nati Asher</span>
+    <span>You made it all the way here? I&rsquo;m honored.</span>
   </div>
 </footer>
 
