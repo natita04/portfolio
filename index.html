@@ -213,6 +213,7 @@
   .case-tag{
     font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--accent-deep);
     background:var(--accent-tint); padding:6px 12px; border-radius:20px; white-space:nowrap;
+    text-transform:uppercase; letter-spacing:0.04em;
   }
   details.case{ display:block; }
   .case-earlier summary{ list-style:none; cursor:pointer; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
@@ -337,7 +338,7 @@
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
   .signature{ font-family:'Cedarville Cursive', cursive; font-size:44px; line-height:1; color:var(--ink); display:inline-block; padding:8px 4px 0; }
   .footer-meta{ text-align:right; }
-  .footer-meta small{ font-size:12px; opacity:0.8; }
+  .footer-meta small{ font-size:inherit; }
 
   @media (max-width:960px){
     .thread{ display:none; }
@@ -424,7 +425,7 @@
     <div class="section-head milestone">
       <span class="kicker">Selected work</span>
       <h2>Case studies</h2>
-      <p>Real projects, each one a case in aligning design strategy with a business roadmap across a lot of stakeholders. Details coming soon.</p>
+      <p>Real projects, each one a case in aligning design strategy with a business roadmap across a lot of stakeholders.</p>
     </div>
     <div class="content-col">
       <div class="milestones">
