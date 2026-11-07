@@ -95,6 +95,7 @@
   }
   h1 em{ font-style:normal; color:var(--accent); background:linear-gradient(transparent 72%, var(--accent-tint) 72%); }
   .hero-sub{ font-size:18px; color:var(--ink-soft); max-width:530px; margin-bottom:32px; }
+  .hero-sub-lead{ margin-bottom:16px; color:var(--ink); font-weight:500; }
   .hero-cta{ display:flex; gap:14px; flex-wrap:wrap; }
   .btn{
     font-family:'Inter', sans-serif; font-size:14px; font-weight:600;
@@ -130,10 +131,6 @@
   .section-head p{ color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:560px; }
 
   .content-col{ padding-left:56px; }
-  .head-row{ display:flex; justify-content:space-between; align-items:baseline; gap:12px 24px; flex-wrap:wrap; }
-  .head-link{ font-size:14px; font-weight:600; color:var(--accent-deep); text-decoration:none; white-space:nowrap; transition:color .15s; }
-  .head-link:hover{ color:var(--accent); }
-  .head-link-after{ display:none; }
 
   /* SECTION PALETTES */
   #background, #work{ --accent:var(--orange); --accent-deep:var(--orange-deep); --accent-tint:var(--orange-tint); }
@@ -233,6 +230,8 @@
   .log-row:hover .log-title{ color:var(--accent-deep); }
   .log-title{ font-size:15.5px; font-weight:500; transition:color .15s; }
   .log-row .arrow{ color:var(--accent); font-size:14px; flex-shrink:0; }
+  .log-end{ display:flex; align-items:center; gap:14px; flex-shrink:0; }
+  .log-src{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); }
   .log-year{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft); margin-left:10px; }
   .log-tag{ margin-left:10px; vertical-align:2px; }
   .log-co{ font-size:13px; color:var(--ink-soft); margin-left:auto; white-space:nowrap; }
@@ -349,8 +348,6 @@
     .contact-grid{ grid-template-columns:1fr; }
     .case, .case-earlier summary{ grid-template-columns:1fr; }
     .podcast{ grid-template-columns:1fr; }
-    .head-row .head-link{ display:none; }
-    .head-link-after{ display:inline-block; margin-top:20px; }
     .personal{ background:linear-gradient(rgba(74,26,30,0.82), rgba(74,26,30,0.82)), url("images/kids.jpg") 60% 45% / cover no-repeat; padding:100px 0; }
     nav ul{ gap:16px; }
     h1{ font-size:38px; }
@@ -379,7 +376,8 @@
     <div class="hero-grid">
       <div>
         <h1>Design leadership that turns <em>complexity</em> into a roadmap teams can actually run on.</h1>
-        <p class="hero-sub">Hola! I'm Nati Asher. I lead design for Field Service at Salesforce. In my day to day, I connect design strategy to business goals across many moving parts and stakeholders, and empower designers to do their best work. But also, I stay close to the craft and sharp by working on our products, while experimenting with the latest AI advances.</p>
+        <p class="hero-sub hero-sub-lead">Hola! I&rsquo;m Nati, Senior Director of Product Design at Salesforce.</p>
+        <p class="hero-sub">I build and grow design teams, shape product strategy, and help organizations turn complex challenges into meaningful experiences. My work spans enterprise products, AI-powered workflows, and the people who bring them to life.</p>
         <div class="hero-cta">
           <a class="btn btn-ghost" href="https://docs.google.com/document/d/1Qw-0Jf51E6m26qLTmSPa730HD1nIotpbLRekI3A5PqQ/edit?tab=t.0" target="_blank">Download CV</a>
         </div>
@@ -399,7 +397,7 @@
     <div class="thread"></div>
     <div class="section-head milestone">
       <span class="kicker">Background</span>
-      <h2><em>16 years</em> in product design, the last 5 leading design teams.</h2>
+      <h2><em>16 years</em> in product design, 5 years growing and leading global design teams.</h2>
       <p>I spent over a decade as a hands-on product designer, from consumer security to banking, workspaces and construction tech, before moving into design management.</p>
     </div>
     <div class="content-col">
@@ -427,17 +425,17 @@
       <div class="milestones">
         <div class="case milestone">
           <div>
-            <h3>Add a strategy case study</h3>
-            <p>A project where you translated a business goal into a design roadmap across multiple teams. Problem, your role, the outcome.</p>
+            <h3>From opportunity to product investment</h3>
+            <p>The Scheduling Console journey, from identifying the opportunity and advocating for it to guiding design through delivery.</p>
           </div>
-          <span class="case-tag">Draft</span>
+          <span class="case-tag">In progress</span>
         </div>
         <div class="case milestone">
           <div>
-            <h3>Add a team or org-scaling story</h3>
-            <p>How you built or grew a design org, the operating model, the people you developed.</p>
+            <h3>Building a design team that scales</h3>
+            <p>How I grew the Israel Field Service design team from two to seven, developed capabilities, and increased its organizational influence.</p>
           </div>
-          <span class="case-tag">Draft</span>
+          <span class="case-tag">In progress</span>
         </div>
         <details class="case case-earlier milestone">
           <summary>
@@ -544,40 +542,36 @@
     <div class="thread"></div>
     <div class="section-head milestone">
       <span class="kicker">Thoughts</span>
-      <div class="head-row">
-        <h2>Notes on design and leadership</h2>
-        <a class="head-link" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
-      </div>
+      <h2>Notes on design and leadership</h2>
       <p>I&rsquo;ve loved the printed word since I was young, and writing is still where I think most clearly. Most of these pieces started as notes to help a friend or to sort out my own thinking on a topic.</p>
     </div>
     <div class="content-col">
       <div class="log">
         <a class="log-row" href="https://uxdesign.cc/6-things-i-wish-product-design-candidates-would-ask-me-during-interviews-87d9f21d286e" target="_blank">
           <span class="log-title">Things I wish UX candidates would ask me during interviews <span class="case-tag log-tag">POPULAR</span></span>
-          <span class="arrow">→</span>
+          <span class="log-end"><span class="log-src">Medium</span><span class="arrow">→</span></span>
         </a>
         <a class="log-row" href="https://bootcamp.uxdesign.cc/elevate-your-cv-insider-tips-from-a-decade-in-design-recruitment-8d6c62ffa9c8" target="_blank">
           <span class="log-title">Elevate your CV: insider tips from a decade in design recruitment</span>
-          <span class="arrow">→</span>
+          <span class="log-end"><span class="log-src">Medium</span><span class="arrow">→</span></span>
         </a>
         <a class="log-row" href="https://uxdesign.cc/how-i-turned-from-being-a-ux-architect-into-a-product-designer-and-you-can-too-ed54e00bdac8" target="_blank">
           <span class="log-title">How I turned from being a UX architect into a product designer</span>
-          <span class="arrow">→</span>
+          <span class="log-end"><span class="log-src">Medium</span><span class="arrow">→</span></span>
         </a>
         <a class="log-row" href="https://bootcamp.uxdesign.cc/7-things-i-learned-from-recording-7-podcast-chapters-on-ux-management-c0bc5a3b8d73" target="_blank">
           <span class="log-title">7 things I learned from recording 7 podcast chapters on UX management</span>
-          <span class="arrow">→</span>
+          <span class="log-end"><span class="log-src">Medium</span><span class="arrow">→</span></span>
         </a>
         <a class="log-row" href="https://uxdesign.cc/the-decent-way-to-recruit-product-designers-ea1b60f42ad4" target="_blank">
           <span class="log-title">The decent way to recruit product designers</span>
-          <span class="arrow">→</span>
+          <span class="log-end"><span class="log-src">Medium</span><span class="arrow">→</span></span>
         </a>
         <a class="log-row" href="https://bootcamp.uxdesign.cc/knowing-the-business-a-must-skill-for-young-product-designers-c44bc3823b4a" target="_blank">
           <span class="log-title">Knowing the business: a must-skill for young designers</span>
-          <span class="arrow">→</span>
+          <span class="log-end"><span class="log-src">Medium</span><span class="arrow">→</span></span>
         </a>
       </div>
-      <a class="head-link head-link-after" href="https://natiasher.medium.com/" target="_blank">All articles on Medium →</a>
       <a class="podcast" href="https://www.youtube.com/playlist?list=PLcNbLNCXcHXA" target="_blank">
         <svg class="podcast-wave" viewBox="0 0 640 100" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="45.0" width="4" height="10.0" rx="2"/><rect x="10" y="22.0" width="4" height="56.0" rx="2"/><rect x="20" y="4.0" width="4" height="92.0" rx="2"/><rect x="30" y="11.2" width="4" height="77.6" rx="2"/><rect x="40" y="6.5" width="4" height="87.0" rx="2"/><rect x="50" y="27.0" width="4" height="45.9" rx="2"/><rect x="60" y="29.2" width="4" height="41.7" rx="2"/><rect x="70" y="28.9" width="4" height="42.2" rx="2"/><rect x="80" y="37.8" width="4" height="24.5" rx="2"/><rect x="90" y="31.9" width="4" height="36.3" rx="2"/><rect x="100" y="40.6" width="4" height="18.8" rx="2"/><rect x="110" y="27.0" width="4" height="46.1" rx="2"/><rect x="120" y="16.8" width="4" height="66.5" rx="2"/><rect x="130" y="32.2" width="4" height="35.5" rx="2"/><rect x="140" y="32.6" width="4" height="34.9" rx="2"/><rect x="150" y="31.9" width="4" height="36.1" rx="2"/><rect x="160" y="11.7" width="4" height="76.7" rx="2"/><rect x="170" y="4.0" width="4" height="92.0" rx="2"/><rect x="180" y="7.2" width="4" height="85.7" rx="2"/><rect x="190" y="6.2" width="4" height="87.5" rx="2"/><rect x="200" y="31.1" width="4" height="37.9" rx="2"/><rect x="210" y="36.2" width="4" height="27.6" rx="2"/><rect x="220" y="15.8" width="4" height="68.5" rx="2"/><rect x="230" y="20.9" width="4" height="58.2" rx="2"/><rect x="240" y="12.7" width="4" height="74.6" rx="2"/><rect x="250" y="29.9" width="4" height="40.2" rx="2"/><rect x="260" y="29.3" width="4" height="41.4" rx="2"/><rect x="270" y="27.3" width="4" height="45.5" rx="2"/><rect x="280" y="40.9" width="4" height="18.1" rx="2"/><rect x="290" y="29.5" width="4" height="41.0" rx="2"/><rect x="300" y="34.4" width="4" height="31.3" rx="2"/><rect x="310" y="18.8" width="4" height="62.4" rx="2"/><rect x="320" y="6.5" width="4" height="87.0" rx="2"/><rect x="330" y="20.3" width="4" height="59.4" rx="2"/><rect x="340" y="20.8" width="4" height="58.3" rx="2"/><rect x="350" y="43.6" width="4" height="12.8" rx="2"/><rect x="360" y="20.7" width="4" height="58.6" rx="2"/><rect x="370" y="4.0" width="4" height="92.0" rx="2"/><rect x="380" y="7.1" width="4" height="85.8" rx="2"/><rect x="390" y="4.0" width="4" height="92.0" rx="2"/><rect x="400" y="22.1" width="4" height="55.7" rx="2"/><rect x="410" y="26.5" width="4" height="47.1" rx="2"/><rect x="420" y="27.8" width="4" height="44.3" rx="2"/><rect x="430" y="32.3" width="4" height="35.4" rx="2"/><rect x="440" y="22.6" width="4" height="54.8" rx="2"/><rect x="450" y="38.0" width="4" height="24.0" rx="2"/><rect x="460" y="35.9" width="4" height="28.3" rx="2"/><rect x="470" y="25.5" width="4" height="49.1" rx="2"/><rect x="480" y="37.0" width="4" height="26.0" rx="2"/><rect x="490" y="32.1" width="4" height="35.9" rx="2"/><rect x="500" y="34.7" width="4" height="30.5" rx="2"/><rect x="510" y="16.1" width="4" height="67.7" rx="2"/><rect x="520" y="4.0" width="4" height="92.0" rx="2"/><rect x="530" y="10.3" width="4" height="79.4" rx="2"/><rect x="540" y="7.9" width="4" height="84.2" rx="2"/><rect x="550" y="32.0" width="4" height="36.1" rx="2"/><rect x="560" y="34.7" width="4" height="30.7" rx="2"/><rect x="570" y="12.3" width="4" height="75.4" rx="2"/><rect x="580" y="14.9" width="4" height="70.3" rx="2"/><rect x="590" y="4.6" width="4" height="90.9" rx="2"/><rect x="600" y="21.1" width="4" height="57.8" rx="2"/><rect x="610" y="22.0" width="4" height="56.1" rx="2"/><rect x="620" y="23.4" width="4" height="53.3" rx="2"/><rect x="630" y="40.3" width="4" height="19.5" rx="2"/></svg>
         <span class="podcast-icon" aria-hidden="true">▶</span>
