@@ -289,17 +289,17 @@
   #bench .case-tag{ color:var(--red-deep); background:var(--red-tint); }
 
   /* BENCH */
-  .bench{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .bench{ display:grid; grid-template-columns:1fr; gap:16px; }
   .bench-card{
     background:var(--surface); border:1px solid var(--line); border-radius:14px;
-    padding:22px; text-decoration:none; color:var(--ink); display:flex; flex-direction:column; gap:12px;
+    padding:22px 26px; text-decoration:none; color:var(--ink); display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 140px; align-items:center; gap:12px 32px;
     transition:border-color .15s, transform .15s, box-shadow .15s;
   }
   .bench-card:hover{ border-color:var(--ink); transform:translate(-3px,-3px); box-shadow:6px 6px 0 var(--accent); }
   .bench-card h4{ font-family:'Sora', sans-serif; font-size:16px; }
   .bench-desc{ font-size:14px; line-height:1.55; color:var(--ink-soft); }
-  .bench-card .go{ font-size:13px; color:var(--accent-deep); font-weight:600; margin-top:auto; }
-  .bench-feature{ grid-column:1 / -1; }
+  .bench-card .go{ font-size:13px; color:var(--accent-deep); font-weight:600; white-space:nowrap; text-align:right; }
+  .bench-sub{ display:block; margin-top:4px; font-size:13px; color:var(--ink-soft); }
   .bench-tag{ margin-left:8px; vertical-align:2px; }
 
   /* PERSONAL */
@@ -345,7 +345,8 @@
   @media (max-width:860px){
     .hero-grid{ grid-template-columns:1fr; }
     .pillars{ grid-template-columns:1fr; }
-    .bench{ grid-template-columns:1fr; }
+    .bench-card{ grid-template-columns:1fr; gap:10px; }
+    .bench-card .go{ text-align:left; }
     .contact-grid{ grid-template-columns:1fr; }
     .case, .case-earlier summary{ grid-template-columns:1fr; }
     .podcast{ grid-template-columns:1fr; }
@@ -602,23 +603,43 @@
     </div>
     <div class="content-col">
       <div class="bench">
-        <a class="bench-card bench-feature" href="https://getkiddoz.app" target="_blank">
-          <h4>Kiddoz <span class="case-tag bench-tag">Now in Beta</span></h4>
+        <a class="bench-card" href="https://getkiddoz.app" target="_blank">
+          <div class="bench-head">
+            <h4>Kiddoz <span class="case-tag bench-tag">Now in Beta</span></h4>
+            <span class="bench-sub">Family memories app</span>
+          </div>
           <p class="bench-desc">A private space for families to save their kids&rsquo; stories, photos and first moments, together with the people who love them.</p>
           <span class="go">Visit getkiddoz.app →</span>
         </a>
+        <a class="bench-card" href="https://money-audit-delta.vercel.app/sample" target="_blank">
+          <div class="bench-head">
+            <h4>Personal Money Audit</h4>
+            <span class="bench-sub">Personal finance dashboard</span>
+          </div>
+          <p class="bench-desc">A clear view of where the money goes: spending by category, income, savings and investments over time. The link opens a sample with demo data.</p>
+          <span class="go">View sample →</span>
+        </a>
         <a class="bench-card" href="https://health-tracker-one-weld.vercel.app/" target="_blank">
-          <h4>Health Tracker</h4>
+          <div class="bench-head">
+            <h4>Health Tracker</h4>
+            <span class="bench-sub">Daily health and habit tracker</span>
+          </div>
           <p class="bench-desc">A daily health plan with a weight log and streaks to keep me going.</p>
           <span class="go">Visit project →</span>
         </a>
         <a class="bench-card" href="https://hof-ashkelon-01.vercel.app/" target="_blank">
-          <h4>Hof Ashkelon</h4>
+          <div class="bench-head">
+            <h4>Hof Ashkelon</h4>
+            <span class="bench-sub">Social services web prototype</span>
+          </div>
           <p class="bench-desc">A prototype for making local social services easier to find and use.</p>
           <span class="go">Visit project →</span>
         </a>
         <a class="bench-card" href="https://workout-timer-self-theta.vercel.app/" target="_blank">
-          <h4>Workout Timer for Circuit Training</h4>
+          <div class="bench-head">
+            <h4>Workout Timer for Circuit Training</h4>
+            <span class="bench-sub">Circuit training timer app</span>
+          </div>
           <p class="bench-desc">A configurable timer for circuit workouts, built for my own training sessions.</p>
           <span class="go">Visit project →</span>
         </a>
