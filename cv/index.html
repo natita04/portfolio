@@ -59,13 +59,12 @@
     .talks li{ flex-direction:column; gap:0; }
   }
 
-  @page{ size:A4; margin:12mm 14mm; }
-  @page :first{ margin:0; }
+  @page{ size:A4; margin:0; }
   @media print{
     body{ background:transparent; font-size:9.6pt; line-height:1.38; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .bar{ display:none; }
     html{ background:linear-gradient(180deg,var(--pink-tint) 0,#fff 95mm) no-repeat; }
-    .sheet{ margin:0; max-width:none; border:0; border-radius:0; padding:12mm 14mm 0; background:none; }
+    .sheet{ margin:0; max-width:none; border:0; border-radius:0; padding:12mm 14mm 12mm; background:none; }
     h1{ font-size:38pt; }
     section{ margin-top:10px; padding-top:8px; break-inside:avoid; }
     #pro{ margin-top:22px; padding-top:16px; }
@@ -76,6 +75,7 @@
     h2{ margin-bottom:8px; }
     .job + .job{ margin-top:15px; }
     #pro{ break-inside:auto; }
+    #speaking{ break-before:page; margin-top:0; padding-top:12mm; }
     .contact a{ border:0; }
     a{ text-decoration:none; }
   }
@@ -84,7 +84,7 @@
 <body>
 
 <div class="bar">
-  <a class="back" href="../">&larr; Back to portfolio</a>
+  <a class="back" href="../">&larr; Back to homepage</a>
   <a class="btn" href="Nati-Asher-CV.pdf" download="Nati-Asher-CV.pdf">Download PDF</a>
 </div>
 
@@ -151,7 +151,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="speaking">
     <h2>Selected Speaking &amp; Thought Leadership</h2>
     <p class="note">Active contributor to the design community through public speaking, writing, mentoring, and a podcast exploring the realities of UX management.</p>
     <ul class="talks">
