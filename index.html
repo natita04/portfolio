@@ -65,7 +65,7 @@
   .brand:hover .brand-mark{ transform:rotate(-3deg); }
   nav ul{list-style:none; display:flex; gap:30px;}
   nav a{
-    font-size:13px; text-decoration:none; color:var(--ink-soft);
+    font-size:18px; text-decoration:none; color:var(--ink-soft);
     font-weight:500; letter-spacing:0.01em; transition:color .15s;
   }
   nav a:hover{color:var(--accent-deep);}
@@ -334,6 +334,8 @@
   .contact-links a span{ font-size:13px; color:var(--accent); font-weight:400; }
 
   footer{ border-top:1px solid var(--line); padding:24px 0; font-size:13px; color:var(--ink-soft); }
+  .foot-brand{ display:inline-flex; align-items:center; gap:12px; }
+  .foot-brand img{ display:block; border-radius:6px; }
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
 
   @media (max-width:960px){
@@ -379,7 +381,7 @@
         <p class="hero-sub hero-sub-lead">Hola! I&rsquo;m Nati, Senior Director of Product Design at Salesforce.</p>
         <p class="hero-sub">I build and grow design teams, shape product strategy, and help organizations turn complex challenges into meaningful experiences. My work spans enterprise products, AI-powered workflows, and the people who bring them to life.</p>
         <div class="hero-cta">
-          <a class="btn btn-ghost" href="https://docs.google.com/document/d/1Qw-0Jf51E6m26qLTmSPa730HD1nIotpbLRekI3A5PqQ/edit?tab=t.0" target="_blank">Download CV</a>
+          <a class="btn btn-ghost" href="cv/">Download CV</a>
         </div>
       </div>
       <div class="id-card">
@@ -447,7 +449,7 @@
         <details class="case case-earlier milestone">
           <summary>
             <div>
-              <h3>Earlier work, before Salesforce</h3>
+              <h3>Earlier work</h3>
               <p>Hands-on work from my years as a full-stack product designer at Buildots, WeWork, Aqua and Citi, from research and flows to detailed UI. Each project opens as a PDF.</p>
             </div>
             <span class="case-tag">10 projects <span class="chev" aria-hidden="true">▾</span></span>
@@ -679,7 +681,7 @@
         <a href="https://natiasher.medium.com/" target="_blank">Medium <span>→</span></a>
         <a href="https://wa.me/972543124112" target="_blank">WhatsApp <span>→</span></a>
         <a href="https://www.instagram.com/ursulita04/" target="_blank">Instagram <span>→</span></a>
-        <a href="https://docs.google.com/document/d/1Qw-0Jf51E6m26qLTmSPa730HD1nIotpbLRekI3A5PqQ/edit?tab=t.0" target="_blank">Download CV <span>→</span></a>
+        <a href="cv/">Download CV <span>→</span></a>
       </div>
     </div>
   </div>
@@ -687,7 +689,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nati Asher</span>
+    <span class="foot-brand"><img src="favicon.svg" alt="" width="28" height="28">© 2026 Nati Asher</span>
     <span>You made it all the way here? I&rsquo;m honored.</span>
   </div>
 </footer>
